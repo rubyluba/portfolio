@@ -44,6 +44,38 @@
     .accordion-arrow.open { transform: rotate(180deg); }
     pre code { border-radius: 8px; font-size: 0.85rem !important; }
     ::selection { background: #3b82f6; color: #fff; }
+
+    /* Hero 비주얼 애니메이션 */
+    .bar-animate { animation: barGrow 1.2s ease-out 0.5s both; }
+    @keyframes barGrow { from { width: 100%; } to { width: 25%; } }
+    .donut-animate { animation: donutFill 1.5s ease-out 0.5s both; }
+    @keyframes donutFill { from { stroke-dashoffset: 213.6; } to { stroke-dashoffset: 53.4; } }
+
+    /* 프린트용 */
+    @media print {
+      body { background: white !important; color: black !important; }
+      nav, .animate-bounce { display: none !important; }
+      .fade-in { opacity: 1 !important; transform: none !important; }
+      .accordion-content { max-height: none !important; overflow: visible !important; }
+      .accordion-arrow { display: none !important; }
+      section { break-inside: avoid; page-break-inside: avoid; padding: 2rem 1rem !important; min-height: auto !important; }
+      .bg-dark-900, .bg-dark-800, .bg-dark-700, .bg-dark-600 { background: white !important; }
+      .text-white, .text-gray-300, .text-gray-400 { color: #111 !important; }
+      .text-gray-500, .text-gray-600 { color: #555 !important; }
+      .bg-accent\/10, .bg-accent\/20 { background: #e8f0fe !important; }
+      .border-accent\/30, .border-accent\/50 { border-color: #93b5f5 !important; }
+      .bg-gray-800 { background: #f3f4f6 !important; }
+      .text-gray-300.border-gray-700 { color: #333 !important; border-color: #ccc !important; }
+      .border-gray-800 { border-color: #ddd !important; }
+      pre { white-space: pre-wrap !important; word-wrap: break-word !important; }
+      footer { break-before: avoid; }
+      h1 { font-size: 2.5rem !important; }
+      .min-h-screen { min-height: auto !important; }
+      .bar-animate, .donut-animate { animation: none !important; }
+      .bar-animate { width: 25% !important; }
+      .donut-animate { stroke-dashoffset: 53.4 !important; }
+      .countup { /* JS will set final values */ }
+    }
   </style>
 </head>
 <body class="bg-black text-white font-sans">
@@ -71,22 +103,40 @@
       <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
         AI 에이전트를 직접 만들어 QA 파이프라인을 자동화한 엔지니어
       </p>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 text-center max-w-2xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 text-center max-w-3xl mx-auto">
         <div>
-          <p class="text-3xl md:text-4xl font-bold text-white">7<span class="text-accent">종</span></p>
+          <p class="text-3xl md:text-4xl font-bold text-white"><span class="countup" data-target="7">0</span><span class="text-accent">종</span></p>
           <p class="text-gray-400 text-sm mt-1">AI QA 에이전트 개발</p>
         </div>
         <div>
-          <p class="text-3xl md:text-4xl font-bold text-white">4000<span class="text-accent">+</span></p>
+          <p class="text-3xl md:text-4xl font-bold text-white"><span class="countup" data-target="4000">0</span><span class="text-accent">+</span></p>
           <p class="text-gray-400 text-sm mt-1">버그 식별</p>
         </div>
         <div>
-          <p class="text-3xl md:text-4xl font-bold text-white">2h<span class="text-accent">&rarr;</span>30m</p>
-          <p class="text-gray-400 text-sm mt-1">회귀테스트 단축</p>
+          <div class="flex items-center justify-center gap-2 mb-1">
+            <div class="text-right">
+              <div class="h-2 rounded-full bg-red-500/30 w-20 md:w-24"><div class="h-2 rounded-full bg-red-400 w-full"></div></div>
+              <p class="text-xs text-gray-500 mt-0.5">2h</p>
+            </div>
+            <span class="text-accent text-lg font-bold">&rarr;</span>
+            <div class="text-left">
+              <div class="h-2 rounded-full bg-green-500/30 w-20 md:w-24"><div class="h-2 rounded-full bg-green-400 bar-animate" style="width:25%"></div></div>
+              <p class="text-xs text-gray-500 mt-0.5">30m</p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm">회귀테스트 단축</p>
         </div>
         <div>
-          <p class="text-3xl md:text-4xl font-bold text-white">75<span class="text-accent">%</span></p>
-          <p class="text-gray-400 text-sm mt-1">토큰 비용 절감</p>
+          <div class="relative w-20 h-20 mx-auto mb-2">
+            <svg class="w-20 h-20 -rotate-90" viewBox="0 0 80 80">
+              <circle cx="40" cy="40" r="34" fill="none" stroke="#1a1a1a" stroke-width="8"/>
+              <circle cx="40" cy="40" r="34" fill="none" stroke="#3b82f6" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="213.6" class="donut-animate"/>
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="text-lg font-bold"><span class="countup" data-target="75">0</span><span class="text-accent text-sm">%</span></p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm">토큰 비용 절감</p>
         </div>
       </div>
     </div>
@@ -291,7 +341,7 @@
                 <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">YAML</span>
               </div>
               <h3 class="text-lg md:text-xl font-bold">AI QA 스킬/에이전트 개발</h3>
-              <p class="text-gray-500 text-sm mt-1">스킬 3종 + 에이전트 4종 | TC 자동 도출 | 토큰 비용 75% 절감</p>
+              <p class="text-gray-500 text-sm mt-1">QA 팀 없이도 돌아가는 자동화 파이프라인을 혼자 만듦</p>
             </div>
             <svg class="accordion-arrow open w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -438,7 +488,7 @@ scenarios:
                 <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">CLAUDE.md</span>
               </div>
               <h3 class="text-lg md:text-xl font-bold">E2E POM 아키텍처 규칙 수립</h3>
-              <p class="text-gray-500 text-sm mt-1">480줄 POM 가이드 | 9개 섹션 | AI 에이전트 + 팀 전체 표준</p>
+              <p class="text-gray-500 text-sm mt-1">사람이 바뀌어도, AI가 써도 동일 품질이 나오는 규칙을 만듦</p>
             </div>
             <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -532,7 +582,7 @@ scenarios:
                 <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">TypeScript</span>
               </div>
               <h3 class="text-lg md:text-xl font-bold">모바일 바텀시트 서명 E2E 구축</h3>
-              <p class="text-gray-500 text-sm mt-1">모바일 서명 E2E 0%&rarr;100% | 애니메이션 안정화 패턴 팀 표준화</p>
+              <p class="text-gray-500 text-sm mt-1">테스트 불가능하던 모바일 서명을 완전 자동화함</p>
             </div>
             <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -593,7 +643,7 @@ scenarios:
                 <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">PDF</span>
               </div>
               <h3 class="text-lg md:text-xl font-bold">E2E 테스트 품질 고도화</h3>
-              <p class="text-gray-500 text-sm mt-1">776줄 POM 리팩토링 | PDF 시각적 회귀 테스트 | 핵심 도메인 커버리지 확대</p>
+              <p class="text-gray-500 text-sm mt-1">레거시 코드 정리부터 시각적 회귀 감지까지, E2E 품질 기반을 다짐</p>
             </div>
             <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -669,7 +719,7 @@ scenarios:
                 <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">TypeScript</span>
               </div>
               <h3 class="text-lg md:text-xl font-bold">Weolbu E2E 테스트 자동화</h3>
-              <p class="text-gray-500 text-sm mt-1">수동 2h &rarr; 30m | 핵심 플로우 3개 자동화 | PR 머지 시 자동 E2E</p>
+              <p class="text-gray-500 text-sm mt-1">수동 2시간을 30분으로 줄이고, PR마다 자동으로 품질을 검증함</p>
             </div>
             <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -810,7 +860,7 @@ jobs:
                 <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Python</span>
               </div>
               <h3 class="text-lg md:text-xl font-bold">Jira-Slack 실시간 연동 시스템</h3>
-              <p class="text-gray-500 text-sm mt-1">이슈 등록 80% 단축 | 정보 동기화 자동화</p>
+              <p class="text-gray-500 text-sm mt-1">Slack에서 버그 리포트하면 Jira에 자동 등록되는 시스템을 만듦</p>
             </div>
             <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -928,7 +978,7 @@ jobs:
                 <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Python</span>
               </div>
               <h3 class="text-lg md:text-xl font-bold">Jira 일일 배포 알림 시스템</h3>
-              <p class="text-gray-500 text-sm mt-1">매일 30분 작업 자동화 | 정보 누락 0건 | 실시간 현황</p>
+              <p class="text-gray-500 text-sm mt-1">매일 30분씩 쓰던 수동 보고를 완전히 없앰</p>
             </div>
             <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -1020,7 +1070,7 @@ jobs:
                 <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">QA</span>
               </div>
               <h3 class="text-lg md:text-xl font-bold">커뮤니티 스쿼드 QA 체계 정립</h3>
-              <p class="text-gray-500 text-sm mt-1">QA 누락 0건 | 핫픽스 월3건&rarr;0~1건 | 릴리즈 지연 0건</p>
+              <p class="text-gray-500 text-sm mt-1">1인 QA로 핫픽스를 월 3건에서 0건으로 만든 체계</p>
             </div>
             <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -1097,7 +1147,7 @@ jobs:
                 <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">TC</span>
               </div>
               <h3 class="text-lg md:text-xl font-bold">WTS QA 프로젝트 (토스증권)</h3>
-              <p class="text-gray-500 text-sm mt-1">TC 1000+건 | 4000+ 이슈 탐지 | 오류 없는 런칭</p>
+              <p class="text-gray-500 text-sm mt-1">TC 0건에서 시작해 4000+버그를 잡고 오류 없이 런칭함</p>
             </div>
             <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -1181,7 +1231,7 @@ jobs:
                 <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">JavaScript</span>
               </div>
               <h3 class="text-lg md:text-xl font-bold">UI 테스트 자동화 (토스증권)</h3>
-              <p class="text-gray-500 text-sm mt-1">금융 테스트 4h&rarr;1h | 핵심 플로우 12개 자동화 | 비디오 증적</p>
+              <p class="text-gray-500 text-sm mt-1">금융 거래 수동 테스트 4시간을 1시간으로, 비디오 증적까지 자동 수집</p>
             </div>
             <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -1319,30 +1369,26 @@ async def create_test_order(order: dict):
     </div>
   </section>
 
-  <!-- ========== 6. WHY ME ========== -->
+  <!-- ========== 6. QA 철학 ========== -->
   <section class="bg-dark-800 py-20 px-6">
     <div class="max-w-4xl mx-auto fade-in">
-      <h2 class="text-3xl font-bold mb-12 text-center">Why Me</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-dark-700 rounded-2xl p-6 border border-gray-800">
-          <div class="text-accent text-2xl font-bold mb-3">01</div>
-          <p class="text-gray-300 text-sm leading-relaxed">단 한 명의 QA로도 팀의 <span class="text-white font-semibold">품질 문화를 만들어 온</span> 경험</p>
-          <p class="text-gray-400 text-xs mt-2">핫픽스 월 3건 &rarr; 0건, QA 누락 0건</p>
+      <h2 class="text-3xl font-bold mb-4 text-center">QA 철학</h2>
+      <p class="text-gray-400 text-sm text-center mb-12">4년간 현장에서 얻은 관점</p>
+      <div class="space-y-8">
+        <div class="bg-dark-700 rounded-2xl p-6 md:p-8 border border-gray-800">
+          <h3 class="text-white font-bold text-lg mb-3">"1인 QA는 자동화에 집착해야 합니다"</h3>
+          <p class="text-gray-300 text-sm leading-relaxed mb-3">혼자서 전체 제품을 커버하려면 수동 반복을 제거하는 수밖에 없습니다. 처음엔 E2E 자동화로 회귀테스트를 2시간에서 30분으로 줄였고, 이후엔 TC 작성과 코드 생성까지 AI로 자동화했습니다. 결과적으로 "QA가 한 명이라 못 한다"는 말이 나오지 않는 환경을 만들었습니다.</p>
+          <p class="text-gray-500 text-xs">핫픽스 월 3건 &rarr; 0건 | QA 누락 0건 | 스킬 3종 + 에이전트 4종</p>
         </div>
-        <div class="bg-dark-700 rounded-2xl p-6 border border-gray-800">
-          <div class="text-accent text-2xl font-bold mb-3">02</div>
-          <p class="text-gray-300 text-sm leading-relaxed">AI 기반 QA 자동화 파이프라인을 설계하고 <span class="text-white font-semibold">직접 구현</span>해낸 QA</p>
-          <p class="text-gray-400 text-xs mt-2">스킬 3종 + 에이전트 4종, 토큰 75% 절감</p>
+        <div class="bg-dark-700 rounded-2xl p-6 md:p-8 border border-gray-800">
+          <h3 class="text-white font-bold text-lg mb-3">"AI는 QA를 대체하는 게 아니라, QA의 판단력을 확장합니다"</h3>
+          <p class="text-gray-300 text-sm leading-relaxed mb-3">AI 에이전트가 TC를 자동 도출하고 E2E 코드를 생성해도, 어떤 시나리오가 중요한지, 어떤 엣지 케이스가 위험한지는 사람이 판단합니다. 저는 AI가 반복 작업을 맡게 하고, 그 시간에 리스크 분석과 테스트 전략에 집중합니다. 토큰 75% 절감도 "더 많이 쓰자"가 아니라 "더 똑똑하게 쓰자"의 결과입니다.</p>
+          <p class="text-gray-500 text-xs">토큰 876K &rarr; 200K (75% 절감) | Canary 패턴으로 조기 실패 감지</p>
         </div>
-        <div class="bg-dark-700 rounded-2xl p-6 border border-gray-800">
-          <div class="text-accent text-2xl font-bold mb-3">03</div>
-          <p class="text-gray-300 text-sm leading-relaxed">품질 관점에서 기획자와 개발자 사이의 <span class="text-white font-semibold">허리를 맡아본</span> QA</p>
-          <p class="text-gray-400 text-xs mt-2">480줄 POM 가이드, TC 작성 표준화</p>
-        </div>
-        <div class="bg-dark-700 rounded-2xl p-6 border border-gray-800">
-          <div class="text-accent text-2xl font-bold mb-3">04</div>
-          <p class="text-gray-300 text-sm leading-relaxed">런칭 QA 경험이 있는 <span class="text-white font-semibold">실전형 QA</span></p>
-          <p class="text-gray-400 text-xs mt-2">WTS 4,000+버그 탐지, 1,000+TC, 오류 없는 런칭</p>
+        <div class="bg-dark-700 rounded-2xl p-6 md:p-8 border border-gray-800">
+          <h3 class="text-white font-bold text-lg mb-3">"규칙을 문서로 남기면, 사람이 바뀌어도 품질은 유지됩니다"</h3>
+          <p class="text-gray-300 text-sm leading-relaxed mb-3">480줄 POM 가이드를 쓴 이유는 단순합니다. 제가 없어도 같은 품질의 E2E 코드가 나와야 하니까요. AI 에이전트도 이 문서를 참조해서 코드를 생성합니다. 사람과 AI 모두 같은 기준으로 움직이는 것 &mdash; 그게 진짜 표준화입니다.</p>
+          <p class="text-gray-500 text-xs">480줄 POM 가이드 | TC 작성 표준화 | 4종 에이전트가 동일 규칙 참조</p>
         </div>
       </div>
     </div>
@@ -1405,6 +1451,30 @@ async def create_test_order(order: dict):
         navbar.style.transform = 'translateY(-100%)';
       }
     });
+
+    // 카운트업 애니메이션
+    function animateCountUp(el) {
+      const target = parseInt(el.dataset.target);
+      const duration = target > 100 ? 1500 : 800;
+      const start = performance.now();
+      function update(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target).toLocaleString();
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.countup').forEach(animateCountUp);
+          countObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    const heroStats = document.querySelector('.grid.grid-cols-2');
+    if (heroStats) countObserver.observe(heroStats);
   </script>
 </body>
 </html>
