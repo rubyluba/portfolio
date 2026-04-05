@@ -419,49 +419,59 @@
 
               <h4 class="font-bold mb-4">전체 파이프라인</h4>
               <div class="bg-gray-50 rounded-xl p-6 mb-6">
-                <!-- 상단: TC 생성 -->
-                <div class="flex items-center gap-3 mb-4 text-sm flex-wrap">
-                  <div class="bg-gray-700 text-white rounded-lg px-4 py-2 font-bold shadow-sm shrink-0">agentic-sd</div>
-                  <div class="flex items-center gap-2 flex-wrap">
-                    <div class="bg-blue-500 text-white rounded-lg px-4 py-2 font-bold shadow-sm">/qa-create-tc</div>
-                    <svg class="w-5 h-4 text-gray-400 shrink-0" viewBox="0 0 20 16"><path d="M0 8h16M10 2l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-                    <span class="text-gray-600 font-medium">tech-spec + DesignSpec</span>
-                    <svg class="w-5 h-4 text-gray-400 shrink-0" viewBox="0 0 20 16"><path d="M0 8h16M10 2l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-                    <div class="bg-green-500 text-white rounded-lg px-4 py-2 font-bold shadow-sm">tc.md</div>
+                <div class="flex flex-col items-center gap-3 text-sm">
+
+                  <!-- Phase 1: TC 생성 -->
+                  <div class="w-full bg-white rounded-xl border-2 border-blue-200 p-4">
+                    <p class="text-xs text-blue-500 font-bold mb-2 uppercase tracking-wider">Phase 1 &mdash; TC 생성 (agentic-sd)</p>
+                    <div class="flex items-center justify-center gap-3 flex-wrap">
+                      <div class="bg-blue-500 text-white rounded-lg px-4 py-2 font-bold shadow-sm">/qa-create-tc</div>
+                      <svg class="w-5 h-4 text-gray-400 shrink-0" viewBox="0 0 20 16"><path d="M0 8h16M10 2l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                      <div class="text-center">
+                        <p class="text-gray-700 font-medium">tech-spec + DesignSpec 읽기</p>
+                        <p class="text-gray-400 text-xs">AC(GWT) &rarr; TC 변환</p>
+                      </div>
+                      <svg class="w-5 h-4 text-gray-400 shrink-0" viewBox="0 0 20 16"><path d="M0 8h16M10 2l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                      <div class="bg-green-500 text-white rounded-lg px-4 py-2 font-bold shadow-sm">tc.md 생성</div>
+                    </div>
                   </div>
-                </div>
-                <!-- 하단: E2E 실행 -->
-                <div class="flex items-start gap-3 text-sm">
-                  <div class="bg-gray-700 text-white rounded-lg px-4 py-2 font-bold shadow-sm shrink-0">web-app</div>
-                  <div>
-                    <div class="bg-blue-500 text-white rounded-lg px-4 py-2 font-bold shadow-sm inline-block mb-3">/tc-auto-test tc.md</div>
-                    <div class="space-y-2.5 ml-1 border-l-3 border-blue-400 pl-4" style="border-left-width:3px">
-                      <div class="flex items-center gap-2.5">
-                        <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
-                        <span class="text-gray-800">TC 파싱 <span class="text-gray-500">(automation=O 필터)</span></span>
+
+                  <svg class="w-4 h-8 text-gray-400" viewBox="0 0 16 32"><path d="M8 0v28M2 22l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+
+                  <!-- Phase 2: E2E 실행 -->
+                  <div class="w-full bg-white rounded-xl border-2 border-green-200 p-4">
+                    <div class="flex items-center justify-between mb-3">
+                      <p class="text-xs text-green-600 font-bold uppercase tracking-wider">Phase 2 &mdash; E2E 자동 실행 (web-app)</p>
+                      <div class="bg-blue-500 text-white rounded-lg px-3 py-1 font-bold text-xs shadow-sm">/tc-auto-test</div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                      <div class="flex items-center gap-2 bg-blue-50 rounded-lg px-3 py-2">
+                        <span class="text-blue-500 font-bold text-xs shrink-0">01</span>
+                        <span class="text-gray-800 text-sm">TC 파싱 <span class="text-gray-400 text-xs">(automation=O 필터)</span></span>
                       </div>
-                      <div class="flex items-center gap-2.5">
-                        <span class="w-2.5 h-2.5 rounded-full bg-purple-500 shrink-0"></span>
-                        <span class="text-gray-800">POM 사전 분석 <span class="bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded text-xs font-semibold">pom-writer</span></span>
+                      <div class="flex items-center gap-2 bg-purple-50 rounded-lg px-3 py-2">
+                        <span class="text-purple-500 font-bold text-xs shrink-0">02</span>
+                        <span class="text-gray-800 text-sm">POM 사전 분석 <span class="bg-purple-200 text-purple-700 px-1.5 py-0.5 rounded text-xs font-semibold">pom-writer</span></span>
                       </div>
-                      <div class="flex items-center gap-2.5">
-                        <span class="w-2.5 h-2.5 rounded-full bg-green-500 shrink-0"></span>
-                        <span class="text-gray-800">spec 생성 <span class="bg-green-100 text-green-700 px-1.5 py-0.5 rounded text-xs font-semibold">test-writer</span> 병렬</span>
+                      <div class="flex items-center gap-2 bg-green-50 rounded-lg px-3 py-2">
+                        <span class="text-green-500 font-bold text-xs shrink-0">03</span>
+                        <span class="text-gray-800 text-sm">spec 병렬 생성 <span class="bg-green-200 text-green-700 px-1.5 py-0.5 rounded text-xs font-semibold">test-writer</span></span>
                       </div>
-                      <div class="flex items-center gap-2.5">
-                        <span class="w-2.5 h-2.5 rounded-full bg-orange-500 shrink-0"></span>
-                        <span class="text-gray-800">Canary 실행 + <span class="bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded text-xs font-semibold">e2e-reviewer</span> + <span class="bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded text-xs font-semibold">rule-checker</span></span>
+                      <div class="flex items-center gap-2 bg-orange-50 rounded-lg px-3 py-2">
+                        <span class="text-orange-500 font-bold text-xs shrink-0">04</span>
+                        <span class="text-gray-800 text-sm">Canary 실행 + 검증 <span class="bg-orange-200 text-orange-700 px-1.5 py-0.5 rounded text-xs font-semibold">reviewer</span></span>
                       </div>
-                      <div class="flex items-center gap-2.5">
-                        <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
-                        <span class="text-gray-800">나머지 spec 전체 실행</span>
+                      <div class="flex items-center gap-2 bg-blue-50 rounded-lg px-3 py-2">
+                        <span class="text-blue-500 font-bold text-xs shrink-0">05</span>
+                        <span class="text-gray-800 text-sm">나머지 spec 전체 실행</span>
                       </div>
-                      <div class="flex items-center gap-2.5">
-                        <span class="w-2.5 h-2.5 rounded-full bg-green-500 shrink-0"></span>
-                        <span class="text-gray-800 font-bold">결과 종합 + 리포트 출력</span>
+                      <div class="flex items-center gap-2 bg-green-50 rounded-lg px-3 py-2 border-2 border-green-300">
+                        <span class="text-green-600 font-bold text-xs shrink-0">06</span>
+                        <span class="text-gray-900 text-sm font-bold">결과 종합 + 리포트 출력</span>
                       </div>
                     </div>
                   </div>
+
                 </div>
               </div>
 
