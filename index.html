@@ -417,48 +417,48 @@
                 </div>
               </div>
 
-              <h4 class="font-bold mb-3">전체 파이프라인</h4>
-              <div class="mb-6">
+              <h4 class="font-bold mb-4">전체 파이프라인</h4>
+              <div class="bg-gray-50 rounded-xl p-6 mb-6">
                 <!-- 상단: TC 생성 -->
-                <div class="flex items-center gap-3 mb-3 text-xs">
-                  <div class="bg-gray-100 border border-gray-300 rounded-lg px-3 py-1.5 text-gray-600 shrink-0">agentic-sd</div>
+                <div class="flex items-center gap-3 mb-4 text-sm flex-wrap">
+                  <div class="bg-gray-700 text-white rounded-lg px-4 py-2 font-bold shadow-sm shrink-0">agentic-sd</div>
                   <div class="flex items-center gap-2 flex-wrap">
-                    <div class="bg-blue-50 border border-blue-300 rounded px-3 py-1.5 font-semibold text-blue-800">/qa-create-tc</div>
-                    <span class="text-gray-400">&rarr;</span>
-                    <span class="text-gray-500">tech-spec + DesignSpec 읽기</span>
-                    <span class="text-gray-400">&rarr;</span>
-                    <div class="bg-green-50 border border-green-300 rounded px-3 py-1.5 font-semibold text-green-800">tc.md 생성</div>
+                    <div class="bg-blue-500 text-white rounded-lg px-4 py-2 font-bold shadow-sm">/qa-create-tc</div>
+                    <svg class="w-5 h-4 text-gray-400 shrink-0" viewBox="0 0 20 16"><path d="M0 8h16M10 2l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                    <span class="text-gray-600 font-medium">tech-spec + DesignSpec</span>
+                    <svg class="w-5 h-4 text-gray-400 shrink-0" viewBox="0 0 20 16"><path d="M0 8h16M10 2l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                    <div class="bg-green-500 text-white rounded-lg px-4 py-2 font-bold shadow-sm">tc.md</div>
                   </div>
                 </div>
                 <!-- 하단: E2E 실행 -->
-                <div class="flex items-start gap-3 text-xs">
-                  <div class="bg-gray-100 border border-gray-300 rounded-lg px-3 py-1.5 text-gray-600 shrink-0 mt-0.5">web-app</div>
+                <div class="flex items-start gap-3 text-sm">
+                  <div class="bg-gray-700 text-white rounded-lg px-4 py-2 font-bold shadow-sm shrink-0">web-app</div>
                   <div>
-                    <div class="bg-blue-50 border border-blue-300 rounded px-3 py-1.5 font-semibold text-blue-800 inline-block mb-2">/tc-auto-test tc.md</div>
-                    <div class="space-y-1.5 ml-2 border-l-2 border-blue-200 pl-3">
-                      <div class="flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span>
-                        <span class="text-gray-700">TC 파싱 (automation=O 필터)</span>
+                    <div class="bg-blue-500 text-white rounded-lg px-4 py-2 font-bold shadow-sm inline-block mb-3">/tc-auto-test tc.md</div>
+                    <div class="space-y-2.5 ml-1 border-l-3 border-blue-400 pl-4" style="border-left-width:3px">
+                      <div class="flex items-center gap-2.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
+                        <span class="text-gray-800">TC 파싱 <span class="text-gray-500">(automation=O 필터)</span></span>
                       </div>
-                      <div class="flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0"></span>
-                        <span class="text-gray-700">POM 사전 분석 (<span class="text-purple-600 font-medium">pom-writer</span>)</span>
+                      <div class="flex items-center gap-2.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span class="text-gray-800">POM 사전 분석 <span class="bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded text-xs font-semibold">pom-writer</span></span>
                       </div>
-                      <div class="flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0"></span>
-                        <span class="text-gray-700">spec 생성 (<span class="text-green-600 font-medium">test-writer</span> 병렬)</span>
+                      <div class="flex items-center gap-2.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-green-500 shrink-0"></span>
+                        <span class="text-gray-800">spec 생성 <span class="bg-green-100 text-green-700 px-1.5 py-0.5 rounded text-xs font-semibold">test-writer</span> 병렬</span>
                       </div>
-                      <div class="flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-orange-400 shrink-0"></span>
-                        <span class="text-gray-700">Canary 실행 + <span class="text-orange-600 font-medium">e2e-reviewer</span> + <span class="text-orange-600 font-medium">rule-checker</span></span>
+                      <div class="flex items-center gap-2.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-orange-500 shrink-0"></span>
+                        <span class="text-gray-800">Canary 실행 + <span class="bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded text-xs font-semibold">e2e-reviewer</span> + <span class="bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded text-xs font-semibold">rule-checker</span></span>
                       </div>
-                      <div class="flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span>
-                        <span class="text-gray-700">나머지 spec 전체 실행</span>
+                      <div class="flex items-center gap-2.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
+                        <span class="text-gray-800">나머지 spec 전체 실행</span>
                       </div>
-                      <div class="flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0"></span>
-                        <span class="text-gray-700 font-medium">결과 종합 + 리포트 출력</span>
+                      <div class="flex items-center gap-2.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-green-500 shrink-0"></span>
+                        <span class="text-gray-800 font-bold">결과 종합 + 리포트 출력</span>
                       </div>
                     </div>
                   </div>
@@ -922,32 +922,34 @@ jobs:
               </div>
 
               <!-- 아키텍처 -->
-              <h4 class="font-bold mb-3">시스템 아키텍처</h4>
-              <div class="flex flex-col items-center gap-2 mb-6 text-xs">
-                <div class="bg-yellow-50 border border-yellow-300 rounded-lg px-4 py-2 font-semibold text-yellow-800">Slack Message</div>
-                <div class="text-gray-400">&#9660;</div>
-                <div class="bg-blue-50 border border-blue-300 rounded-lg px-4 py-2 text-center">
-                  <p class="font-semibold text-blue-800">Lambda A &mdash; 이벤트 라우터</p>
-                  <p class="text-gray-500 mt-0.5">이벤트 타입 분류 &middot; 중복 요청 필터링</p>
-                </div>
-                <div class="flex items-start gap-6">
-                  <div class="flex flex-col items-center gap-2">
-                    <div class="text-gray-400">&#9660;</div>
-                    <div class="bg-green-50 border border-green-300 rounded-lg px-4 py-2 text-center">
-                      <p class="font-semibold text-green-800">Lambda B</p>
-                      <p class="text-gray-500">이슈 생성</p>
-                    </div>
-                    <div class="text-gray-400">&#9660;</div>
-                    <div class="bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 font-semibold text-gray-700">Jira REST API</div>
+              <h4 class="font-bold mb-4">시스템 아키텍처</h4>
+              <div class="bg-gray-50 rounded-xl p-6 mb-6">
+                <div class="flex flex-col items-center gap-3 text-sm">
+                  <div class="bg-yellow-400 text-yellow-900 rounded-lg px-5 py-2.5 font-bold shadow-sm">Slack Message</div>
+                  <svg class="w-4 h-6 text-gray-400" viewBox="0 0 16 24"><path d="M8 0v20M2 14l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                  <div class="bg-blue-500 text-white rounded-lg px-5 py-3 text-center shadow-sm">
+                    <p class="font-bold">Lambda A &mdash; 이벤트 라우터</p>
+                    <p class="text-blue-100 text-xs mt-1">이벤트 타입 분류 &middot; 중복 요청 필터링</p>
                   </div>
-                  <div class="flex flex-col items-center gap-2">
-                    <div class="text-gray-400">&#9660;</div>
-                    <div class="bg-purple-50 border border-purple-300 rounded-lg px-4 py-2 text-center">
-                      <p class="font-semibold text-purple-800">Lambda C</p>
-                      <p class="text-gray-500">댓글 동기화</p>
+                  <div class="flex items-start gap-8 md:gap-12">
+                    <div class="flex flex-col items-center gap-3">
+                      <svg class="w-4 h-6 text-gray-400" viewBox="0 0 16 24"><path d="M8 0v20M2 14l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                      <div class="bg-green-500 text-white rounded-lg px-5 py-2.5 text-center shadow-sm">
+                        <p class="font-bold">Lambda B</p>
+                        <p class="text-green-100 text-xs">이슈 생성</p>
+                      </div>
+                      <svg class="w-4 h-6 text-gray-400" viewBox="0 0 16 24"><path d="M8 0v20M2 14l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                      <div class="bg-gray-700 text-white rounded-lg px-5 py-2.5 font-bold shadow-sm">Jira REST API</div>
                     </div>
-                    <div class="text-gray-400">&#9660;</div>
-                    <div class="bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 font-semibold text-gray-700">DynamoDB</div>
+                    <div class="flex flex-col items-center gap-3">
+                      <svg class="w-4 h-6 text-gray-400" viewBox="0 0 16 24"><path d="M8 0v20M2 14l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                      <div class="bg-purple-500 text-white rounded-lg px-5 py-2.5 text-center shadow-sm">
+                        <p class="font-bold">Lambda C</p>
+                        <p class="text-purple-100 text-xs">댓글 동기화</p>
+                      </div>
+                      <svg class="w-4 h-6 text-gray-400" viewBox="0 0 16 24"><path d="M8 0v20M2 14l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                      <div class="bg-gray-700 text-white rounded-lg px-5 py-2.5 font-bold shadow-sm">DynamoDB</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1044,26 +1046,28 @@ jobs:
                 </div>
               </div>
 
-              <h4 class="font-bold mb-3">시스템 아키텍처</h4>
-              <div class="flex flex-col items-center gap-2 mb-6 text-xs">
-                <div class="bg-orange-50 border border-orange-300 rounded-lg px-4 py-2 font-semibold text-orange-800">EventBridge (매일 09:00 KST)</div>
-                <div class="text-gray-400">&#9660;</div>
-                <div class="bg-blue-50 border border-blue-300 rounded-lg px-4 py-3 text-center">
-                  <p class="font-semibold text-blue-800">AWS Lambda</p>
-                  <div class="flex gap-3 mt-1.5 text-gray-600">
-                    <span class="bg-white rounded px-2 py-0.5 border">1. Jira JQL</span>
-                    <span class="bg-white rounded px-2 py-0.5 border">2. 팀별 분류</span>
-                    <span class="bg-white rounded px-2 py-0.5 border">3. 메시지 생성</span>
+              <h4 class="font-bold mb-4">시스템 아키텍처</h4>
+              <div class="bg-gray-50 rounded-xl p-6 mb-6">
+                <div class="flex flex-col items-center gap-3 text-sm">
+                  <div class="bg-orange-400 text-orange-900 rounded-lg px-5 py-2.5 font-bold shadow-sm">EventBridge (매일 09:00 KST)</div>
+                  <svg class="w-4 h-6 text-gray-400" viewBox="0 0 16 24"><path d="M8 0v20M2 14l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                  <div class="bg-blue-500 text-white rounded-lg px-5 py-3 text-center shadow-sm">
+                    <p class="font-bold">AWS Lambda</p>
+                    <div class="flex flex-wrap justify-center gap-2 mt-2">
+                      <span class="bg-blue-400 rounded px-2.5 py-0.5 text-xs font-medium">1. Jira JQL</span>
+                      <span class="bg-blue-400 rounded px-2.5 py-0.5 text-xs font-medium">2. 팀별 분류</span>
+                      <span class="bg-blue-400 rounded px-2.5 py-0.5 text-xs font-medium">3. 메시지 생성</span>
+                    </div>
                   </div>
-                </div>
-                <div class="flex items-start gap-6">
-                  <div class="flex flex-col items-center gap-2">
-                    <div class="text-gray-400">&#9660;</div>
-                    <div class="bg-yellow-50 border border-yellow-300 rounded-lg px-4 py-2 font-semibold text-yellow-800">Slack Web API</div>
-                  </div>
-                  <div class="flex flex-col items-center gap-2">
-                    <div class="text-gray-400">&#9660;</div>
-                    <div class="bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 font-semibold text-gray-700">DynamoDB</div>
+                  <div class="flex items-start gap-8 md:gap-12">
+                    <div class="flex flex-col items-center gap-3">
+                      <svg class="w-4 h-6 text-gray-400" viewBox="0 0 16 24"><path d="M8 0v20M2 14l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                      <div class="bg-yellow-400 text-yellow-900 rounded-lg px-5 py-2.5 font-bold shadow-sm">Slack Web API</div>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                      <svg class="w-4 h-6 text-gray-400" viewBox="0 0 16 24"><path d="M8 0v20M2 14l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                      <div class="bg-gray-700 text-white rounded-lg px-5 py-2.5 font-bold shadow-sm">DynamoDB</div>
+                    </div>
                   </div>
                 </div>
               </div>
