@@ -22,8 +22,9 @@
     /* 헤더 */
     .header { border-bottom: 2px solid #111; padding-bottom: 8px; margin-bottom: 16px; }
     .header h1 { font-size: 24pt; font-weight: 800; letter-spacing: -0.5px; }
-    .header .contact-row { display: flex; gap: 16px; font-size: 8.5pt; color: #555; margin-top: 4px; }
+    .header .contact-row { display: flex; flex-wrap: wrap; gap: 4px; font-size: 8.5pt; color: #555; margin-top: 4px; }
     .header .contact-row a { color: #3b82f6; text-decoration: none; }
+    .header .contact-row .sep { color: #ccc; }
 
     /* 자기소개 */
     .intro { background: #f8f9fa; border-left: 3px solid #3b82f6; padding: 8px 16px; margin-bottom: 16px; font-size: 9.5pt; line-height: 1.7; color: #333; }
@@ -33,8 +34,8 @@
     .section-title {
       font-size: 12pt;
       font-weight: 800;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 4px;
+      border-left: 3px solid #3b82f6;
+      padding-left: 8px;
       margin-bottom: 8px;
     }
 
@@ -50,16 +51,16 @@
     .company-meta { font-size: 8.5pt; color: #888; margin-bottom: 8px; }
 
     /* 서브 프로젝트 */
-    .sub-project { margin-bottom: 8px; break-inside: avoid; }
+    .sub-project { margin-bottom: 8px; break-inside: avoid; padding-left: 12px; border-left: 2px solid #e5e5e5; }
     .sub-project-title { font-size: 10pt; font-weight: 700; margin-bottom: 2px; }
     .sub-project-meta { font-size: 8pt; color: #888; margin-bottom: 4px; }
     .sub-project ul { padding-left: 16px; }
     .sub-project li { margin-bottom: 2px; font-size: 9pt; }
     .sub-project li::marker { color: #3b82f6; }
-    .hl { font-weight: 600; }
+    .hl { font-weight: 600; color: #3b82f6; }
 
-    /* 하단 2열 */
-    .bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    /* 하단 3열 */
+    .bottom-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
 
     /* 링크 */
     .links a { color: #3b82f6; text-decoration: none; font-size: 9pt; }
@@ -70,6 +71,9 @@
       @page { size: A4; margin: 14mm 16mm; }
       .intro { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .skill-core { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .section-title { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .sub-project { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .hl { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
   </style>
 </head>
@@ -79,9 +83,9 @@
   <div class="header">
     <h1>윤가영</h1>
     <div class="contact-row">
-      <span>010-6529-6563</span>
-      <span>qwe06277@naver.com</span>
-      <a href="https://github.com/rubyluba">github.com/rubyluba</a>
+      <span>010-6529-6563</span><span class="sep">&nbsp;|&nbsp;</span>
+      <span>qwe06277@naver.com</span><span class="sep">&nbsp;|&nbsp;</span>
+      <a href="https://github.com/rubyluba">github.com/rubyluba</a><span class="sep">&nbsp;|&nbsp;</span>
       <a href="https://rubyluba.github.io/portfolio/">포트폴리오</a>
     </div>
   </div>
@@ -300,26 +304,25 @@
     </div>
   </div>
 
-  <!-- ===== 학력 & 자격증 ===== -->
+  <!-- ===== 학력 & 자격증 & 링크 ===== -->
   <div class="bottom-row">
     <div class="section">
       <div class="section-title">학력</div>
-      <p><strong>단국대학교</strong> &nbsp;응용컴퓨터공학과 &nbsp;<span style="color:#888;">2018.03 - 2022.08 졸업</span></p>
-      <p style="font-size:8pt; color:#888; margin-top:2px;">알고리즘, 인공지능, 프로그래밍 언어, 데이터베이스, 자료구조 등</p>
+      <p><strong>단국대학교</strong></p>
+      <p style="font-size:8.5pt;">응용컴퓨터공학과</p>
+      <p style="font-size:8pt; color:#888;">2018.03 - 2022.08 졸업</p>
     </div>
     <div class="section">
       <div class="section-title">자격증</div>
-      <p><strong>ISTQB CTFL</strong> &nbsp;<span style="color:#888;">2023.02</span></p>
-      <p><strong>컴퓨터활용능력 1급</strong> &nbsp;<span style="color:#888;">2022.01</span></p>
+      <p><strong>ISTQB CTFL</strong> &nbsp;<span style="color:#888; font-size:8pt;">2023.02</span></p>
+      <p><strong>컴퓨터활용능력 1급</strong> &nbsp;<span style="color:#888; font-size:8pt;">2022.01</span></p>
     </div>
-  </div>
-
-  <!-- ===== 링크 ===== -->
-  <div class="section">
-    <div class="section-title">링크</div>
-    <div class="links">
-      <p><strong>포트폴리오</strong> &nbsp;<a href="https://rubyluba.github.io/portfolio/">rubyluba.github.io/portfolio</a></p>
-      <p><strong>GitHub</strong> &nbsp;<a href="https://github.com/rubyluba">github.com/rubyluba</a></p>
+    <div class="section">
+      <div class="section-title">링크</div>
+      <div class="links">
+        <p><a href="https://rubyluba.github.io/portfolio/">포트폴리오 사이트</a></p>
+        <p><a href="https://github.com/rubyluba">GitHub</a></p>
+      </div>
     </div>
   </div>
 
