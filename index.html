@@ -55,7 +55,7 @@
       <p class="text-accent text-sm md:text-base tracking-widest uppercase mb-4">QA Engineer</p>
       <h1 class="text-5xl md:text-7xl font-bold mb-6">윤가영</h1>
       <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-        자동화로 품질과 효율을 동시에 끌어올린 QA
+        자동화와 AI로 품질과 효율을 동시에 끌어올린 QA
       </p>
       <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-center">
         <div>
@@ -146,6 +146,8 @@
         <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">Figma</span>
         <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">Excel</span>
         <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">GitHub</span>
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">Claude Code</span>
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">YAML</span>
       </div>
     </div>
   </section>
@@ -155,6 +157,24 @@
     <div class="max-w-4xl mx-auto fade-in">
       <h2 class="text-3xl font-bold mb-12 text-center">Career</h2>
       <div class="space-y-8">
+        <!-- 모두싸인 -->
+        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-200">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+            <div>
+              <h3 class="text-xl font-bold">모두싸인</h3>
+              <p class="text-accent text-sm font-medium">QA Engineer</p>
+            </div>
+            <p class="text-gray-500 text-sm mt-1 md:mt-0">2025.11 ~ 재직중</p>
+          </div>
+          <ul class="text-gray-700 space-y-2 text-sm leading-relaxed">
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>Playwright + TypeScript 기반 E2E 자동화 테스트 작성 및 유지보수</li>
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>Claude Code 기반 AI QA 자동화 스킬/에이전트 7종 개발</li>
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>POM 아키텍처 규칙 480줄 가이드 문서 수립 및 리팩토링 주도</li>
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>모바일 바텀시트 서명 플로우 E2E 신규 구축</li>
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>PDF 스냅샷 비교 기반 시각적 회귀 테스트 도입</li>
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>링크서명/내부결재/GNB 계약 등 핵심 도메인 E2E 커버리지 확대</li>
+          </ul>
+        </div>
         <!-- 월급쟁이부자들 -->
         <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-200">
           <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
@@ -162,7 +182,7 @@
               <h3 class="text-xl font-bold">월급쟁이부자들</h3>
               <p class="text-accent text-sm font-medium">QA Engineer</p>
             </div>
-            <p class="text-gray-500 text-sm mt-1 md:mt-0">2025.01 ~ 재직중</p>
+            <p class="text-gray-500 text-sm mt-1 md:mt-0">2025.01 ~ 2025.10</p>
           </div>
           <ul class="text-gray-700 space-y-2 text-sm leading-relaxed">
             <li class="flex gap-2"><span class="text-accent">&#8226;</span>Playwright + TypeScript 기반 E2E 테스트 자동화 구축</li>
@@ -226,6 +246,451 @@
     <div class="max-w-5xl mx-auto fade-in">
       <h2 class="text-3xl font-bold mb-12 text-center">Projects</h2>
       <div class="space-y-6">
+
+        <!-- ===== 모두싸인 ===== -->
+        <div class="flex items-center gap-3 mb-2">
+          <h3 class="text-xl font-bold text-gray-800">모두싸인</h3>
+          <span class="text-gray-400 text-sm">2025.11 ~ 재직중</span>
+        </div>
+
+        <!-- Modusign Project 1: AI QA 스킬/에이전트 개발 (Full) -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <button onclick="toggleAccordion(this)" class="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Claude Code</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Playwright</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">TypeScript</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">YAML</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold">AI QA 스킬/에이전트 개발</h3>
+              <p class="text-gray-500 text-sm mt-1">스킬 3종 + 에이전트 4종 | TC 자동 도출 | 토큰 비용 75% 절감</p>
+            </div>
+            <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 md:px-8 pb-8 border-t border-gray-100 pt-6">
+              <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div>
+                  <h4 class="font-bold text-red-600 mb-2">Problem</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>TC 작성이 수동, 기획 문서 기반 도출 시간 소요</li>
+                    <li>TC &rarr; E2E 코드 변환 반복적</li>
+                    <li>실행/검증/리포트 과정이 분절적</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-accent mb-2">How</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>Claude Code 스킬 3종 + 에이전트 4종 설계/개발</li>
+                    <li>TC 생성 &rarr; E2E 실행 전체 파이프라인 자동화</li>
+                    <li>Canary 패턴 + 토큰 최적화</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-600 mb-2">Value</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>TC 작성 &rarr; AI 자동 도출</li>
+                    <li>E2E 원스텝 생성/실행/리포트</li>
+                    <li>토큰 비용 75% 절감 (876K&rarr;200K)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h4 class="font-bold mb-3">개발한 스킬 &amp; 에이전트</h4>
+              <div class="grid md:grid-cols-2 gap-4 mb-6">
+                <div>
+                  <p class="font-semibold text-sm mb-2 text-accent">스킬 3종</p>
+                  <div class="space-y-2">
+                    <div class="bg-gray-50 rounded-lg p-3">
+                      <p class="font-semibold text-sm">qa-create-tc</p>
+                      <p class="text-xs text-gray-500">tech-spec AC(GWT) + DesignSpec &rarr; tc.md 자동 생성</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-3">
+                      <p class="font-semibold text-sm">tc-auto-test</p>
+                      <p class="text-xs text-gray-500">TC &rarr; E2ESpec YAML &rarr; spec 생성 &rarr; Playwright 실행 &rarr; 리포트</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-3">
+                      <p class="font-semibold text-sm">e2e-gen</p>
+                      <p class="text-xs text-gray-500">자연어 시나리오 &rarr; E2ESpec YAML &rarr; BDD spec 생성</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <p class="font-semibold text-sm mb-2 text-accent">에이전트 4종</p>
+                  <div class="space-y-2">
+                    <div class="bg-gray-50 rounded-lg p-3">
+                      <p class="font-semibold text-sm">test-writer</p>
+                      <p class="text-xs text-gray-500">E2ESpec &rarr; BDD spec 작성, POM 메서드 직접 추가</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-3">
+                      <p class="font-semibold text-sm">pom-writer</p>
+                      <p class="text-xs text-gray-500">POM 작성/수정 (리팩토링 + 신규)</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-3">
+                      <p class="font-semibold text-sm">e2e-reviewer</p>
+                      <p class="text-xs text-gray-500">spec/POM 의미적 검증 + 코드 리뷰 + 수정</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-3">
+                      <p class="font-semibold text-sm">e2e-rule-checker</p>
+                      <p class="text-xs text-gray-500">grep 기반 규칙 위반 탐지 &rarr; 리포트</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h4 class="font-bold mb-3">전체 파이프라인</h4>
+              <pre class="bg-gray-900 text-green-400 rounded-lg p-4 text-xs md:text-sm overflow-x-auto mb-6"><code>[agentic-sd]                              [web-app]
+────────────────────────────────────────────────────────
+/qa-create-tc DI-801
+  │ tech-spec.md + DesignSpec(tsx) 읽기
+  │ AC(GWT) → TC 변환
+  ▼
+tc.md 생성
+                                          /tc-auto-test tc.md
+                                            │
+                                            ├─ Step 1: TC 파싱 (automation=O 필터)
+                                            ├─ Step 1.5: POM 사전 분석 (pom-writer)
+                                            ├─ Step 2: spec 생성 (test-writer 병렬)
+                                            ├─ Step 3: Canary 실행 + 검증
+                                            │   ├─ Playwright (canary 1개)
+                                            │   ├─ e2e-reviewer (전체 리뷰)
+                                            │   └─ e2e-rule-checker (규칙 검사)
+                                            ├─ Step 3B: 나머지 spec 전체 실행
+                                            ├─ Step 4: 결과 종합 + TC 결과 업데이트
+                                            └─ Step 5: 리포트 출력</code></pre>
+
+              <h4 class="font-bold mb-3">핵심 설계 포인트</h4>
+              <div class="space-y-3">
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm">Canary 패턴</p>
+                  <p class="text-xs text-gray-500 mt-1">첫 번째 spec 1개를 먼저 실행하여 조기 실패 감지, 최대 2회 재시도 후 나머지 전체 실행</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm">POM 충돌 방지</p>
+                  <p class="text-xs text-gray-500 mt-1">Phase 1에서 pom-writer로 필요한 POM 메서드를 한번에 추가, Phase 2에서 test-writer는 spec만 생성 (POM 읽기 전용)</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm">토큰 최적화</p>
+                  <p class="text-xs text-gray-500 mt-1">reviewer에게 파일 내용을 프롬프트에 직접 삽입하여 Read tool call 최소화 (876K &rarr; 200K 토큰, 75% 절감)</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm">크로스 레포 연동</p>
+                  <p class="text-xs text-gray-500 mt-1">agentic-sd에서 TC 생성 &rarr; web-app에서 E2E 실행, 절대경로로 tc.md 참조</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modusign Project 2: E2E POM 아키텍처 규칙 수립 (Full) -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <button onclick="toggleAccordion(this)" class="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Playwright</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">TypeScript</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">CLAUDE.md</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold">E2E POM 아키텍처 규칙 수립</h3>
+              <p class="text-gray-500 text-sm mt-1">480줄 POM 가이드 | 9개 섹션 | AI 에이전트 + 팀 전체 표준</p>
+            </div>
+            <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 md:px-8 pb-8 border-t border-gray-100 pt-6">
+              <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div>
+                  <h4 class="font-bold text-red-600 mb-2">Problem</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>E2E 코드에 일관된 구조 없음</li>
+                    <li>CSS/ID 선택자로 테스트 쉽게 깨짐</li>
+                    <li>Page/Component/Flow 역할 혼재</li>
+                    <li>AI 에이전트 코드 생성 일관성 부재</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-accent mb-2">How</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>480줄 POM 코딩 규칙 가이드 작성</li>
+                    <li>Locator 우선순위 7단계 정의</li>
+                    <li>Page/Component/Flow 3계층 분리</li>
+                    <li>메서드 prefix 10종 표준화</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-600 mb-2">Value</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>팀/AI 동일 규칙 코드 작성</li>
+                    <li>제품 변경 시 테스트 깨짐 방지</li>
+                    <li>신규 온보딩 시간 단축</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h4 class="font-bold mb-3">문서 구성 (9개 섹션)</h4>
+              <div class="overflow-x-auto mb-6">
+                <table class="w-full text-sm border-collapse">
+                  <thead><tr class="bg-gray-50"><th class="text-left p-3 border-b font-semibold">#</th><th class="text-left p-3 border-b font-semibold">섹션</th><th class="text-left p-3 border-b font-semibold">내용</th></tr></thead>
+                  <tbody>
+                    <tr><td class="p-3 border-b">1</td><td class="p-3 border-b">AI 친화적 구조 원칙</td><td class="p-3 border-b text-gray-600">Self-describing, Predictable, Composable</td></tr>
+                    <tr><td class="p-3 border-b">2</td><td class="p-3 border-b">Locator 사용 규칙</td><td class="p-3 border-b text-gray-600">시맨틱 locator 우선순위 7단계, CSS/ID 금지</td></tr>
+                    <tr><td class="p-3 border-b">3</td><td class="p-3 border-b">메서드 작성 규칙</td><td class="p-3 border-b text-gray-600">prefix 10종, 파라미터 규칙, 코드 배치 순서</td></tr>
+                    <tr><td class="p-3 border-b">4</td><td class="p-3 border-b">공통 모듈 정의</td><td class="p-3 border-b text-gray-600">Page/Component/Flow 3계층 역할 분리</td></tr>
+                    <tr><td class="p-3 border-b">5</td><td class="p-3 border-b">리팩토링 가이드</td><td class="p-3 border-b text-gray-600">체크리스트 + 수정/삭제 백로그</td></tr>
+                    <tr><td class="p-3 border-b">6</td><td class="p-3 border-b">TC &rarr; Spec 자동 생성</td><td class="p-3 border-b text-gray-600">/e2e-gen, /tc-auto-test 스킬 연동</td></tr>
+                    <tr><td class="p-3 border-b">7</td><td class="p-3 border-b">AI 에이전트</td><td class="p-3 border-b text-gray-600">4종 에이전트 역할 정의 + 자동 검증 규칙</td></tr>
+                    <tr><td class="p-3 border-b">8</td><td class="p-3 border-b">도메인 레지스트리</td><td class="p-3 border-b text-gray-600">JSDoc 태그 분석 &rarr; 자동 갱신 스크립트</td></tr>
+                    <tr><td class="p-3 border-b">9</td><td class="p-3 border-b">도메인 패턴 가이드</td><td class="p-3 border-b text-gray-600">도메인별 기본 상태, gotcha, 사전 조건</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h4 class="font-bold mb-3">Locator 우선순위</h4>
+              <pre class="bg-gray-900 text-green-400 rounded-lg p-4 text-xs md:text-sm overflow-x-auto mb-6"><code>1. getByRole()      ← 최우선 (시맨틱)
+2. getByText()
+3. getByLabel()
+4. getByPlaceholder()
+5. getByAltText()
+6. getByTitle()
+7. getByTestId()    ← 최후 수단
+━━━━━━━━━━━━━━━━━━━━
+✗ CSS selector      ← 금지
+✗ ID selector       ← 금지
+✗ XPath             ← 금지</code></pre>
+
+              <h4 class="font-bold mb-3">3계층 아키텍처</h4>
+              <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm text-accent">Page</p>
+                  <p class="text-xs text-gray-500 mt-1">URL 컨텍스트 대표, Component 생성/반환, spec의 진입점</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm text-accent">Component</p>
+                  <p class="text-xs text-gray-500 mt-1">단일 UI 요소 래핑, spec에서 직접 생성 금지</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm text-accent">Flow</p>
+                  <p class="text-xs text-gray-500 mt-1">여러 Page/Component 조합, 비즈니스 워크플로우 수행</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modusign Project 3: 모바일 바텀시트 서명 E2E (Medium) -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <button onclick="toggleAccordion(this)" class="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Playwright</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">TypeScript</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold">모바일 바텀시트 서명 E2E 구축</h3>
+              <p class="text-gray-500 text-sm mt-1">모바일 서명 E2E 0%&rarr;100% | 애니메이션 안정화 패턴 팀 표준화</p>
+            </div>
+            <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 md:px-8 pb-8 border-t border-gray-100 pt-6">
+              <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div>
+                  <h4 class="font-bold text-red-600 mb-2">Problem</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>모바일 바텀시트 서명 E2E 전무</li>
+                    <li>애니메이션으로 인한 테스트 flaky</li>
+                    <li>PC/모바일 UI 분기 대응 불가</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-accent mb-2">How</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>aria-busy 기반 바텀시트 안정화</li>
+                    <li>CSS 애니메이션 완료 대기 로직</li>
+                    <li>device 분기 구조 ('web'|'mobile')</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-600 mb-2">Value</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>모바일 서명 E2E 커버리지 0%&rarr;100%</li>
+                    <li>안정화 패턴 팀 표준으로 확립</li>
+                    <li>PC/모바일 통합 테스트 구조 마련</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h4 class="font-bold mb-3">애니메이션 안정화 패턴</h4>
+              <pre class="bg-gray-900 text-green-400 rounded-lg p-4 text-xs md:text-sm overflow-x-auto mb-6"><code>바텀시트 열림
+  → aria-busy="true" 감지
+  → height 안정화 대기 (CSS transition 완료)
+  → aria-busy="false" 확인
+  → 버튼 클릭 가능</code></pre>
+
+              <h4 class="font-bold mb-3">구현 시나리오</h4>
+              <div class="grid md:grid-cols-2 gap-3">
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">사인/도장 바텀시트 열기/닫기</p></div>
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">이미지 첨부 바텀시트</p></div>
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">체크박스 바텀시트</p></div>
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">약관 동의 바텀시트</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modusign Project 4: SignaturePage 리팩토링 (Compact) -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <button onclick="toggleAccordion(this)" class="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Playwright</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">TypeScript</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold">SignaturePage 대규모 리팩토링</h3>
+              <p class="text-gray-500 text-sm mt-1">776줄 핵심 POM | 4단계 리팩토링 | CLAUDE.md 모범 예시 지정</p>
+            </div>
+            <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 md:px-8 pb-8 border-t border-gray-100 pt-6">
+              <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div>
+                  <h4 class="font-bold text-red-600 mb-2">Problem</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>776줄 비대한 POM, 역할 경계 불명확</li>
+                    <li>미사용 locator/레거시 메서드 방치</li>
+                    <li>플로우와 단일 액션 메서드 혼재</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-accent mb-2">How</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>4단계 리팩토링 수행</li>
+                    <li>SignatureFlowPage로 플로우 분리</li>
+                    <li>device 파라미터 기반 모바일 대응</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-600 mb-2">Value</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>CLAUDE.md 모범 예시로 지정</li>
+                    <li>단일 책임 원칙 준수</li>
+                    <li>모바일 대응 패턴 정착</li>
+                  </ul>
+                </div>
+              </div>
+              <h4 class="font-bold mb-3">리팩토링 결과</h4>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm border-collapse">
+                  <thead><tr class="bg-gray-50"><th class="text-left p-3 border-b font-semibold">항목</th><th class="text-left p-3 border-b font-semibold">Before</th><th class="text-left p-3 border-b font-semibold">After</th></tr></thead>
+                  <tbody>
+                    <tr><td class="p-3 border-b">SignaturePage 역할</td><td class="p-3 border-b text-gray-600">Page + Flow 혼재</td><td class="p-3 border-b text-green-600 font-medium">Page만 (단일 액션)</td></tr>
+                    <tr><td class="p-3 border-b">Flow 메서드</td><td class="p-3 border-b text-gray-600">SignaturePage에 포함</td><td class="p-3 border-b text-green-600 font-medium">SignatureFlowPage 분리</td></tr>
+                    <tr><td class="p-3 border-b">미사용 locator</td><td class="p-3 border-b text-gray-600">다수 방치</td><td class="p-3 border-b text-green-600 font-medium">제거 완료</td></tr>
+                    <tr><td class="p-3 border-b">모바일 지원</td><td class="p-3 border-b text-gray-600">없음</td><td class="p-3 border-b text-green-600 font-medium">device 분기 구조</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modusign Project 5: 시각적 회귀 테스트 (Compact) -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <button onclick="toggleAccordion(this)" class="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Playwright</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">TypeScript</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">PDF</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold">시각적 회귀 테스트 도입</h3>
+              <p class="text-gray-500 text-sm mt-1">PDF 스냅샷 비교 | 필드 위치 스크린샷 비교 | CI/CD 품질 게이트 통합</p>
+            </div>
+            <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 md:px-8 pb-8 border-t border-gray-100 pt-6">
+              <div class="grid md:grid-cols-3 gap-6">
+                <div>
+                  <h4 class="font-bold text-red-600 mb-2">Problem</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>PDF 렌더링 검증 수단 없음</li>
+                    <li>필드 위치/크기 변경 미감지</li>
+                    <li>수동 PDF 비교 번거로움</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-accent mb-2">How</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>PDF 스크린샷 캡처 &rarr; 기준 스냅샷 비교</li>
+                    <li>필드 위치 스크린샷 비교</li>
+                    <li>임계값 초과 시 테스트 실패</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-600 mb-2">Value</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>PDF 회귀 자동 감지</li>
+                    <li>CI에서 필드 변경 자동 포착</li>
+                    <li>CI/CD 품질 게이트 통합</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modusign Project 6: 링크서명/내부결재 E2E (Compact) -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <button onclick="toggleAccordion(this)" class="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Playwright</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">TypeScript</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold">링크서명/내부결재 E2E 커버리지 확대</h3>
+              <p class="text-gray-500 text-sm mt-1">핵심 도메인 E2E 확장 | flaky 해소 | 외부 의존 제거</p>
+            </div>
+            <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 md:px-8 pb-8 border-t border-gray-100 pt-6">
+              <div class="grid md:grid-cols-3 gap-6">
+                <div>
+                  <h4 class="font-bold text-red-600 mb-2">Problem</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>링크서명 E2E 불완전</li>
+                    <li>내부결재 타이밍 이슈</li>
+                    <li>외부 서버 의존으로 CI 불안정</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-accent mb-2">How</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>링크서명 플로우 전면 개선</li>
+                    <li>비동기 대기 로직으로 안정화</li>
+                    <li>로컬 파일 업로드 방식 전환</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-600 mb-2">Value</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>UX 변경 시 회귀 자동 감지</li>
+                    <li>flaky 테스트 해소</li>
+                    <li>CI 환경 안정적 실행</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== 월급쟁이부자들 ===== -->
+        <div class="flex items-center gap-3 mt-8 mb-2">
+          <h3 class="text-xl font-bold text-gray-800">월급쟁이부자들</h3>
+          <span class="text-gray-400 text-sm">2025.01 ~ 2025.10</span>
+        </div>
 
         <!-- Project 1: Weolbu E2E -->
         <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
@@ -686,6 +1151,12 @@ def build_slack_message(teams: dict) -> list:
           </div>
         </div>
 
+        <!-- ===== 토스증권 ===== -->
+        <div class="flex items-center gap-3 mt-8 mb-2">
+          <h3 class="text-xl font-bold text-gray-800">토스증권</h3>
+          <span class="text-gray-400 text-sm">2024.01 ~ 2025.01</span>
+        </div>
+
         <!-- Project 5: WTS QA -->
         <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
           <button onclick="toggleAccordion(this)" class="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4">
@@ -928,7 +1399,7 @@ async def create_test_order(order: dict):
         </div>
         <div class="bg-dark-700 rounded-2xl p-6 border border-gray-800">
           <div class="text-accent text-2xl font-bold mb-3">02</div>
-          <p class="text-gray-300 text-sm leading-relaxed">테스트 자동화와 협업 효율화를 <span class="text-white font-semibold">동시에 실현</span>해낸 QA</p>
+          <p class="text-gray-300 text-sm leading-relaxed">AI 기반 QA 자동화 파이프라인을 설계하고 <span class="text-white font-semibold">직접 구현</span>해낸 QA</p>
         </div>
         <div class="bg-dark-700 rounded-2xl p-6 border border-gray-800">
           <div class="text-accent text-2xl font-bold mb-3">03</div>
@@ -960,7 +1431,7 @@ async def create_test_order(order: dict):
           github.com/rubyluba
         </a>
       </div>
-      <p class="text-gray-600 text-xs mt-10">&copy; 2025 윤가영. All rights reserved.</p>
+      <p class="text-gray-600 text-xs mt-10">&copy; 2026 윤가영. All rights reserved.</p>
     </div>
   </footer>
 
