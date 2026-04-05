@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>윤가영 | QA Engineer Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/typescript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/dockerfile.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard Variable', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+          },
+          colors: {
+            dark: {
+              900: '#000000',
+              800: '#111111',
+              700: '#1a1a1a',
+              600: '#222222',
+            },
+            accent: '#3b82f6',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+    .accordion-content.open { max-height: 8000px; }
+    .accordion-arrow { transition: transform 0.3s ease; }
+    .accordion-arrow.open { transform: rotate(180deg); }
+    pre code { border-radius: 8px; font-size: 0.85rem !important; }
+    ::selection { background: #3b82f6; color: #fff; }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- ========== 1. HERO ========== -->
+  <section class="min-h-screen flex items-center justify-center bg-dark-900 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-dark-700/50 to-dark-900"></div>
+    <div class="relative z-10 text-center px-6 fade-in">
+      <p class="text-accent text-sm md:text-base tracking-widest uppercase mb-4">QA Engineer</p>
+      <h1 class="text-5xl md:text-7xl font-bold mb-6">윤가영</h1>
+      <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+        자동화로 품질과 효율을 동시에 끌어올린 QA
+      </p>
+      <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-center">
+        <div>
+          <p class="text-3xl md:text-4xl font-bold text-white">100<span class="text-accent">+</span></p>
+          <p class="text-gray-500 text-sm mt-1">릴리즈</p>
+        </div>
+        <div>
+          <p class="text-3xl md:text-4xl font-bold text-white">4000<span class="text-accent">+</span></p>
+          <p class="text-gray-500 text-sm mt-1">버그 식별</p>
+        </div>
+        <div>
+          <p class="text-3xl md:text-4xl font-bold text-white">2h<span class="text-accent">&rarr;</span>30m</p>
+          <p class="text-gray-500 text-sm mt-1">회귀테스트 단축</p>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </div>
+  </section>
+
+  <!-- ========== 2. PROFILE ========== -->
+  <section class="bg-dark-800 py-20 px-6">
+    <div class="max-w-4xl mx-auto fade-in">
+      <h2 class="text-3xl font-bold mb-10 text-center">Profile</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <div>
+              <p class="text-gray-500 text-sm">Phone</p>
+              <p class="text-white">010-6529-6563</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <div>
+              <p class="text-gray-500 text-sm">Email</p>
+              <p class="text-white">qwe06277@naver.com</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            <div>
+              <p class="text-gray-500 text-sm">GitHub</p>
+              <a href="https://github.com/rubyluba" target="_blank" class="text-accent hover:underline">github.com/rubyluba</a>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 7l-9-5 9-5 9 5-9 5z"/></svg>
+            <div>
+              <p class="text-gray-500 text-sm">Education</p>
+              <p class="text-white">단국대학교 응용컴퓨터공학과</p>
+              <p class="text-gray-500 text-xs">2018.03 ~ 2022.08</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div>
+              <p class="text-gray-500 text-sm">Certifications</p>
+              <p class="text-white">ISTQB CTFL <span class="text-gray-500 text-xs">2023.02</span></p>
+              <p class="text-white">컴퓨터활용능력 1급 <span class="text-gray-500 text-xs">2022.01</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3. SKILLS ========== -->
+  <section class="bg-dark-700 py-20 px-6">
+    <div class="max-w-4xl mx-auto fade-in">
+      <h2 class="text-3xl font-bold mb-10 text-center">Skills</h2>
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">Playwright</span>
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">TypeScript</span>
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">Python</span>
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">JavaScript</span>
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">AWS Lambda</span>
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">DynamoDB</span>
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">Jira</span>
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">Slack API</span>
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">Docker</span>
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">SQL</span>
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">Selenium</span>
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">Figma</span>
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">Excel</span>
+        <span class="px-4 py-2 bg-accent/10 text-accent border border-accent/30 rounded-full text-sm font-medium">GitHub</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4. CAREER TIMELINE ========== -->
+  <section class="bg-neutral-100 text-gray-900 py-20 px-6">
+    <div class="max-w-4xl mx-auto fade-in">
+      <h2 class="text-3xl font-bold mb-12 text-center">Career</h2>
+      <div class="space-y-8">
+        <!-- 월급쟁이부자들 -->
+        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-200">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+            <div>
+              <h3 class="text-xl font-bold">월급쟁이부자들</h3>
+              <p class="text-accent text-sm font-medium">QA Engineer</p>
+            </div>
+            <p class="text-gray-500 text-sm mt-1 md:mt-0">2025.01 ~ 재직중</p>
+          </div>
+          <ul class="text-gray-700 space-y-2 text-sm leading-relaxed">
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>Playwright + TypeScript 기반 E2E 테스트 자동화 구축</li>
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>Slack-Jira 실시간 연동 시스템 설계 및 개발 (AWS Lambda)</li>
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>QA 일정-마일스톤 자동 연동 체계 구축</li>
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>이커머스/커뮤니티 스쿼드 QA 리딩</li>
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>VOC 기반 시나리오 설계 및 핫픽스 대응</li>
+          </ul>
+        </div>
+        <!-- 토스증권 -->
+        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-200">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+            <div>
+              <h3 class="text-xl font-bold">토스증권</h3>
+              <p class="text-accent text-sm font-medium">QA Specialist</p>
+            </div>
+            <p class="text-gray-500 text-sm mt-1 md:mt-0">2024.01 ~ 2025.01</p>
+          </div>
+          <ul class="text-gray-700 space-y-2 text-sm leading-relaxed">
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>WTS(웹 트레이딩 시스템) TC 수행 및 이슈 관리</li>
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>국내 원장 시스템 TC 작성 및 검증</li>
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>TC 작성 가이드 제작 및 팀 내 표준화</li>
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>Playwright 기반 UI 테스트 자동화 구축</li>
+          </ul>
+        </div>
+        <!-- 티맥스오에스 -->
+        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-200">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+            <div>
+              <h3 class="text-xl font-bold">티맥스오에스</h3>
+              <p class="text-accent text-sm font-medium">QA Manager</p>
+            </div>
+            <p class="text-gray-500 text-sm mt-1 md:mt-0">2022.09 ~ 2023.11</p>
+          </div>
+          <ul class="text-gray-700 space-y-2 text-sm leading-relaxed">
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>하이퍼미팅 QA 리딩 (화상회의 솔루션)</li>
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>SI 프로젝트 QA 수행</li>
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>부하테스트 및 서버 리소스 최적화</li>
+          </ul>
+        </div>
+        <!-- 티맥스와플 -->
+        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-200">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+            <div>
+              <h3 class="text-xl font-bold">티맥스와플</h3>
+              <p class="text-accent text-sm font-medium">QA Manager</p>
+            </div>
+            <p class="text-gray-500 text-sm mt-1 md:mt-0">2022.05 ~ 2022.09</p>
+          </div>
+          <ul class="text-gray-700 space-y-2 text-sm leading-relaxed">
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>화상회의 Software QA</li>
+            <li class="flex gap-2"><span class="text-accent">&#8226;</span>Docker/K8s 기반 테스트 환경 관리</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5. PROJECTS ========== -->
+  <section class="bg-neutral-50 text-gray-900 py-20 px-6">
+    <div class="max-w-5xl mx-auto fade-in">
+      <h2 class="text-3xl font-bold mb-12 text-center">Projects</h2>
+      <div class="space-y-6">
+
+        <!-- Project 1: Weolbu E2E -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <button onclick="toggleAccordion(this)" class="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Playwright</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">TypeScript</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold">Weolbu E2E 테스트 자동화</h3>
+              <p class="text-gray-500 text-sm mt-1">수동 2h &rarr; 30m | 핵심 플로우 3개 자동화 | PR 머지 시 자동 E2E</p>
+            </div>
+            <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 md:px-8 pb-8 border-t border-gray-100 pt-6">
+              <!-- Problem / How / Value -->
+              <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div>
+                  <h4 class="font-bold text-red-600 mb-2">Problem</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>SMS 인증 수동 처리</li>
+                    <li>결제 로직 검증 어려움</li>
+                    <li>상품 옵션별 가격 계산 한계</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-accent mb-2">How</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>POM(Page Object Model) 아키텍처</li>
+                    <li>SMS 인증 자동화 (테스트 API 연동)</li>
+                    <li>CI/CD 파이프라인 통합</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-600 mb-2">Value</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>수동 테스트 2h &rarr; 30m</li>
+                    <li>핵심 플로우 3개 자동화</li>
+                    <li>PR 머지 시 자동 E2E 실행</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 테스트 시나리오 -->
+              <h4 class="font-bold mb-3">테스트 시나리오</h4>
+              <div class="grid md:grid-cols-3 gap-4 mb-8">
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm mb-1">1. 회원가입 &rarr; 로그인</p>
+                  <p class="text-xs text-gray-500">SMS 인증 자동화 포함</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm mb-1">2. 상품 구매 플로우</p>
+                  <p class="text-xs text-gray-500">옵션 선택, 가격 계산, 결제</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm mb-1">3. 마이페이지 검증</p>
+                  <p class="text-xs text-gray-500">구매 내역, 수강 상태 확인</p>
+                </div>
+              </div>
+
+              <!-- 코드 스니펫 -->
+              <h4 class="font-bold mb-3">PaymentPage POM</h4>
+              <pre><code class="language-typescript">export class PaymentPage {
+  constructor(private page: Page) {}
+
+  async selectOption(optionName: string) {
+    await this.page.click(`[data-option="${optionName}"]`);
+  }
+
+  async verifyPrice(expected: number) {
+    const price = await this.page
+      .locator('.total-price')
+      .textContent();
+    expect(Number(price?.replace(/[^0-9]/g, '')))
+      .toBe(expected);
+  }
+
+  async proceedPayment() {
+    await this.page.click('[data-testid="pay-button"]');
+    await this.page.waitForURL('**/payment/complete');
+  }
+}</code></pre>
+
+              <h4 class="font-bold mt-6 mb-3">SMS 인증 자동화</h4>
+              <pre><code class="language-typescript">async function getVerificationCode(phone: string) {
+  const response = await request.get(
+    `${TEST_API}/sms/latest?phone=${phone}`
+  );
+  const { code } = await response.json();
+  return code;
+}
+
+// 테스트에서 사용
+const code = await getVerificationCode('01012345678');
+await page.fill('[data-testid="sms-code"]', code);
+await page.click('[data-testid="verify-btn"]');</code></pre>
+
+              <h4 class="font-bold mt-6 mb-3">CI/CD 파이프라인</h4>
+              <pre><code class="language-yaml">name: E2E Tests
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - run: npm ci
+      - run: npx playwright install --with-deps
+      - run: npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: test-results
+          path: test-results/</code></pre>
+
+              <!-- 기술적 도전 -->
+              <h4 class="font-bold mt-6 mb-3">기술적 도전</h4>
+              <div class="space-y-3">
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm">1. SMS 인증 자동화</p>
+                  <p class="text-xs text-gray-500 mt-1">테스트 전용 API 엔드포인트를 활용하여 인증 코드를 프로그래밍 방식으로 조회, 수동 개입 없이 전체 인증 플로우 자동화</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm">2. 결제 로직 검증</p>
+                  <p class="text-xs text-gray-500 mt-1">테스트 결제 게이트웨이를 통한 실제 결제 플로우 시뮬레이션, 옵션별 가격 계산 로직 검증</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm">3. 테스트 데이터 관리</p>
+                  <p class="text-xs text-gray-500 mt-1">테스트 실행마다 독립적인 데이터 셋업/클린업으로 테스트 간 의존성 제거</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Jira-Slack 실시간 연동 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <button onclick="toggleAccordion(this)" class="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">AWS Lambda</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">DynamoDB</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Node.js</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Python</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold">Jira-Slack 실시간 연동 시스템</h3>
+              <p class="text-gray-500 text-sm mt-1">이슈 등록 80% 단축 | 정보 동기화 자동화</p>
+            </div>
+            <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 md:px-8 pb-8 border-t border-gray-100 pt-6">
+              <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div>
+                  <h4 class="font-bold text-red-600 mb-2">Problem</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>Jira 수동 등록 병목</li>
+                    <li>Slack-Jira 댓글 불일치</li>
+                    <li>상태 업데이트 수작업</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-accent mb-2">How</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>Lambda 3개 (이벤트 라우터 / 이슈 생성 / 댓글 동기화)</li>
+                    <li>DynamoDB 중복 방지</li>
+                    <li>Jira REST API + Slack Web API</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-600 mb-2">Value</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>이슈 등록 시간 80% 단축</li>
+                    <li>정보 동기화 완전 자동화</li>
+                    <li>커뮤니케이션 단일 채널</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 아키텍처 -->
+              <h4 class="font-bold mb-3">시스템 아키텍처</h4>
+              <pre class="bg-gray-900 text-green-400 rounded-lg p-4 text-xs md:text-sm overflow-x-auto mb-6"><code>Slack Message
+    │
+    ▼
+┌──────────────────┐
+│  Lambda A        │   이벤트 라우터
+│  (Event Router)  │   - 이벤트 타입 분류
+│                  │   - 중복 요청 필터링
+└────────┬─────────┘
+         │
+    ┌────┴────┐
+    ▼         ▼
+┌────────┐ ┌────────────┐
+│Lambda B│ │  Lambda C   │
+│(Issue  │ │  (Comment   │
+│Creator)│ │   Sync)     │
+└───┬────┘ └─────┬──────┘
+    │            │
+    ▼            ▼
+┌────────┐ ┌────────────┐
+│  Jira  │ │  DynamoDB   │
+│  REST  │ │  (매핑 저장) │
+│  API   │ └────────────┘
+└────────┘</code></pre>
+
+              <!-- Lambda A 코드 -->
+              <h4 class="font-bold mb-3">Lambda A: 이벤트 라우터</h4>
+              <pre><code class="language-javascript">exports.handler = async (event) => {
+  const body = JSON.parse(event.body);
+
+  // Slack URL 검증
+  if (body.type === 'url_verification') {
+    return { statusCode: 200, body: body.challenge };
+  }
+
+  // 중복 이벤트 필터링
+  const eventId = body.event_id;
+  const isDuplicate = await checkDuplicate(eventId);
+  if (isDuplicate) return { statusCode: 200 };
+
+  const eventType = body.event?.type;
+
+  if (eventType === 'message' && !body.event.thread_ts) {
+    // 새 메시지 → 이슈 생성
+    await invokeLambda('issue-creator', body.event);
+  } else if (eventType === 'message' && body.event.thread_ts) {
+    // 스레드 댓글 → 댓글 동기화
+    await invokeLambda('comment-sync', body.event);
+  }
+
+  return { statusCode: 200 };
+};</code></pre>
+
+              <!-- Lambda B 코드 -->
+              <h4 class="font-bold mt-6 mb-3">Lambda B: 이슈 생성</h4>
+              <pre><code class="language-python">def create_jira_issue(slack_event):
+    user = get_jira_user(slack_event['user'])
+    summary, description = parse_message(
+        slack_event['text']
+    )
+
+    issue = jira.create_issue(
+        project='QA',
+        summary=summary,
+        description=description,
+        issuetype={'name': 'Bug'},
+        reporter={'accountId': user['jira_id']}
+    )
+
+    # Slack 스레드에 Jira 링크 응답
+    slack.chat_postMessage(
+        channel=slack_event['channel'],
+        thread_ts=slack_event['ts'],
+        text=f"Jira 이슈 생성: {issue.permalink()}"
+    )
+
+    # DynamoDB에 매핑 저장
+    save_mapping(slack_event['ts'], issue.key)
+    return issue.key</code></pre>
+
+              <!-- 해결책 -->
+              <h4 class="font-bold mt-6 mb-3">기술적 해결책</h4>
+              <div class="space-y-3">
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm">중복 처리</p>
+                  <p class="text-xs text-gray-500 mt-1">DynamoDB TTL을 활용한 이벤트 ID 기반 멱등성 보장으로 동일 이벤트 중복 처리 방지</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm">사용자 매핑</p>
+                  <p class="text-xs text-gray-500 mt-1">Slack User ID &harr; Jira Account ID 매핑 테이블로 자동 리포터 할당</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm">Jira 키 추출</p>
+                  <p class="text-xs text-gray-500 mt-1">Slack 메시지 내 Jira 이슈 키 정규식 추출로 기존 이슈 댓글 자동 연결</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Jira 일일 배포 알림 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <button onclick="toggleAccordion(this)" class="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">AWS Lambda</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">EventBridge</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Python</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold">Jira 일일 배포 알림 시스템</h3>
+              <p class="text-gray-500 text-sm mt-1">매일 30분 작업 자동화 | 정보 누락 0건 | 실시간 현황</p>
+            </div>
+            <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 md:px-8 pb-8 border-t border-gray-100 pt-6">
+              <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div>
+                  <h4 class="font-bold text-red-600 mb-2">Problem</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>매일 수동 배포 알림 작성</li>
+                    <li>팀별 현황 파악 어려움</li>
+                    <li>커뮤니케이션 분산</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-accent mb-2">How</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>EventBridge 스케줄링</li>
+                    <li>fixVersion 기반 JQL 쿼리</li>
+                    <li>팀별 자동 분류 + 새로고침 버튼</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-600 mb-2">Value</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>매일 30분 작업 완전 자동화</li>
+                    <li>정보 누락 0건</li>
+                    <li>실시간 현황 공유</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h4 class="font-bold mb-3">시스템 아키텍처</h4>
+              <pre class="bg-gray-900 text-green-400 rounded-lg p-4 text-xs md:text-sm overflow-x-auto mb-6"><code>EventBridge (Cron: 매일 09:00 KST)
+    │
+    ▼
+┌──────────────────┐
+│   AWS Lambda     │
+│                  │
+│  1. Jira JQL     │──▶ fixVersion 기반 쿼리
+│  2. 팀별 분류    │
+│  3. 메시지 생성  │
+│  4. Slack 전송   │
+└────────┬─────────┘
+         │
+    ┌────┴────┐
+    ▼         ▼
+┌────────┐ ┌──────────┐
+│ Slack  │ │ DynamoDB  │
+│ Web API│ │(메시지ID) │
+└────────┘ └──────────┘</code></pre>
+
+              <h4 class="font-bold mb-3">핵심 코드</h4>
+              <pre><code class="language-python">def get_deploy_issues(fix_version: str) -> list:
+    jql = (
+        f'fixVersion = "{fix_version}" '
+        f'AND status in (Done, "In Review") '
+        f'ORDER BY team ASC'
+    )
+    issues = jira.search_issues(jql, maxResults=100)
+    return categorize_by_team(issues)
+
+def build_slack_message(teams: dict) -> list:
+    blocks = [header_block(f"배포 현황 - {today()}")]
+    for team, issues in teams.items():
+        blocks.append(section_block(
+            f"*{team}* ({len(issues)}건)"
+        ))
+        for issue in issues:
+            blocks.append(context_block(
+                f"{issue.key} | {issue.fields.summary} "
+                f"| {issue.fields.status.name}"
+            ))
+    blocks.append(actions_block(refresh_button()))
+    return blocks</code></pre>
+
+              <h4 class="font-bold mt-6 mb-3">기술적 해결책</h4>
+              <div class="space-y-3">
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm">에러 처리</p>
+                  <p class="text-xs text-gray-500 mt-1">Jira API 타임아웃 시 재시도(exponential backoff), 실패 시 Slack 에러 알림 자동 발송</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm">빈 배포일 처리</p>
+                  <p class="text-xs text-gray-500 mt-1">배포 이슈가 없는 날에도 "오늘 배포 없음" 메시지를 전송하여 정보 공백 방지</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <p class="font-semibold text-sm">메시지 상태 관리</p>
+                  <p class="text-xs text-gray-500 mt-1">DynamoDB에 메시지 ID 저장, 새로고침 버튼 클릭 시 기존 메시지 업데이트 (중복 메시지 방지)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: 커뮤니티 스쿼드 QA -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <button onclick="toggleAccordion(this)" class="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Jira</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">QA</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold">커뮤니티 스쿼드 QA 체계 정립</h3>
+              <p class="text-gray-500 text-sm mt-1">QA 누락 0건 | 핫픽스 월3건&rarr;0~1건 | 릴리즈 지연 0건</p>
+            </div>
+            <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 md:px-8 pb-8 border-t border-gray-100 pt-6">
+              <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div>
+                  <h4 class="font-bold text-red-600 mb-2">Problem</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>1인 QA 체계 부재</li>
+                    <li>상태 기반 테스트 복잡성</li>
+                    <li>기획 변경 빈번</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-accent mb-2">How</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>상태 기반 TC 체계 수립</li>
+                    <li>기획 변경 대응 프로세스</li>
+                    <li>VOC 대응 루프 구축</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-600 mb-2">Value</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>QA 누락 0건</li>
+                    <li>핫픽스 월 3건 &rarr; 0~1건</li>
+                    <li>릴리즈 지연 0건</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h4 class="font-bold mb-3">주요 활동</h4>
+              <div class="overflow-x-auto mb-6">
+                <table class="w-full text-sm border-collapse">
+                  <thead><tr class="bg-gray-50"><th class="text-left p-3 border-b font-semibold">활동</th><th class="text-left p-3 border-b font-semibold">내용</th></tr></thead>
+                  <tbody>
+                    <tr><td class="p-3 border-b">상태 기반 TC 설계</td><td class="p-3 border-b text-gray-600">게시글/댓글/유저 상태 조합별 TC 매트릭스 작성</td></tr>
+                    <tr><td class="p-3 border-b">기획 변경 대응</td><td class="p-3 border-b text-gray-600">변경 사항 영향도 분석 &rarr; TC 즉시 업데이트 &rarr; 회귀 범위 재산정</td></tr>
+                    <tr><td class="p-3 border-b">VOC 대응 루프</td><td class="p-3 border-b text-gray-600">VOC 수집 &rarr; 시나리오 추가 &rarr; 회귀 테스트 반영</td></tr>
+                    <tr><td class="p-3 border-b">릴리즈 QA</td><td class="p-3 border-b text-gray-600">스프린트 별 릴리즈 QA 일정 관리 및 실행</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h4 class="font-bold mb-3">성과 지표</h4>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm border-collapse">
+                  <thead><tr class="bg-gray-50"><th class="text-left p-3 border-b font-semibold">지표</th><th class="text-left p-3 border-b font-semibold">Before</th><th class="text-left p-3 border-b font-semibold">After</th></tr></thead>
+                  <tbody>
+                    <tr><td class="p-3 border-b">QA 누락</td><td class="p-3 border-b text-gray-600">빈번</td><td class="p-3 border-b text-green-600 font-medium">0건</td></tr>
+                    <tr><td class="p-3 border-b">월간 핫픽스</td><td class="p-3 border-b text-gray-600">3건</td><td class="p-3 border-b text-green-600 font-medium">0~1건</td></tr>
+                    <tr><td class="p-3 border-b">릴리즈 지연</td><td class="p-3 border-b text-gray-600">간헐적</td><td class="p-3 border-b text-green-600 font-medium">0건</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: WTS QA -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <button onclick="toggleAccordion(this)" class="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">GitHub</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">QA</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">TC</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold">WTS QA 프로젝트 (토스증권)</h3>
+              <p class="text-gray-500 text-sm mt-1">TC 1000+건 | 4000+ 이슈 탐지 | 오류 없는 런칭</p>
+            </div>
+            <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 md:px-8 pb-8 border-t border-gray-100 pt-6">
+              <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div>
+                  <h4 class="font-bold text-red-600 mb-2">Problem</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>신규 트레이딩 플랫폼</li>
+                    <li>고위험 금융 시스템</li>
+                    <li>문서화된 QA 기준 없음</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-accent mb-2">How</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>TC 0부터 체계적 정의</li>
+                    <li>4차례 이터레이션</li>
+                    <li>개발자 직접 커뮤니케이션</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-600 mb-2">Value</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>TC 1,000+건 작성</li>
+                    <li>4,000+ 이슈 탐지</li>
+                    <li>오류 없는 정식 런칭</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h4 class="font-bold mb-3">테스트 전략</h4>
+              <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                <p class="text-sm text-gray-700 leading-relaxed">신규 웹 트레이딩 시스템(WTS)의 QA를 0부터 담당. 기존 문서화된 기준이 없는 상태에서 기획서, 디자인, API 명세를 분석하여 TC를 체계적으로 작성. 4차례에 걸친 이터레이션을 통해 TC를 지속적으로 보완하고, 개발자와 직접 소통하며 엣지 케이스를 발견.</p>
+              </div>
+
+              <h4 class="font-bold mb-3">반복 이터레이션</h4>
+              <div class="grid md:grid-cols-4 gap-3 mb-6">
+                <div class="bg-gray-50 rounded-lg p-4 text-center">
+                  <p class="text-accent font-bold text-lg">1차</p>
+                  <p class="text-xs text-gray-500 mt-1">기본 기능 TC 작성</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4 text-center">
+                  <p class="text-accent font-bold text-lg">2차</p>
+                  <p class="text-xs text-gray-500 mt-1">엣지 케이스 추가</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4 text-center">
+                  <p class="text-accent font-bold text-lg">3차</p>
+                  <p class="text-xs text-gray-500 mt-1">회귀 TC 보완</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4 text-center">
+                  <p class="text-accent font-bold text-lg">4차</p>
+                  <p class="text-xs text-gray-500 mt-1">런칭 전 최종 검증</p>
+                </div>
+              </div>
+
+              <h4 class="font-bold mb-3">성과</h4>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm border-collapse">
+                  <thead><tr class="bg-gray-50"><th class="text-left p-3 border-b font-semibold">항목</th><th class="text-left p-3 border-b font-semibold">수치</th></tr></thead>
+                  <tbody>
+                    <tr><td class="p-3 border-b">작성 TC</td><td class="p-3 border-b text-accent font-medium">1,000+건</td></tr>
+                    <tr><td class="p-3 border-b">탐지 이슈</td><td class="p-3 border-b text-accent font-medium">4,000+건</td></tr>
+                    <tr><td class="p-3 border-b">이터레이션</td><td class="p-3 border-b text-accent font-medium">4회</td></tr>
+                    <tr><td class="p-3 border-b">런칭 결과</td><td class="p-3 border-b text-green-600 font-medium">오류 없는 정식 런칭</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: UI 테스트 자동화 (토스증권) -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <button onclick="toggleAccordion(this)" class="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4">
+            <div>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Playwright</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Docker</span>
+                <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded">JavaScript</span>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold">UI 테스트 자동화 (토스증권)</h3>
+              <p class="text-gray-500 text-sm mt-1">금융 테스트 4h&rarr;1h | 핵심 플로우 12개 자동화 | 비디오 증적</p>
+            </div>
+            <svg class="accordion-arrow w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 md:px-8 pb-8 border-t border-gray-100 pt-6">
+              <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div>
+                  <h4 class="font-bold text-red-600 mb-2">Problem</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>금융 거래 로직 검증 부담</li>
+                    <li>실시간 주식 거래 수동 테스트</li>
+                    <li>커뮤니티 연동 테스트 부재</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-accent mb-2">How</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>POM + JavaScript</li>
+                    <li>Docker 기반 CI/CD</li>
+                    <li>FastAPI 테스트 서버</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-600 mb-2">Value</h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>금융 테스트 4h &rarr; 1h</li>
+                    <li>핵심 플로우 12개 자동화</li>
+                    <li>비디오 증적 수집</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 코드 스니펫들 -->
+              <h4 class="font-bold mb-3">StockDetail POM</h4>
+              <pre><code class="language-javascript">class StockDetailPage {
+  constructor(page) {
+    this.page = page;
+  }
+
+  async navigateTo(stockCode) {
+    await this.page.goto(
+      `/stock/${stockCode}`
+    );
+    await this.page.waitForSelector(
+      '[data-testid="stock-price"]'
+    );
+  }
+
+  async getCurrentPrice() {
+    return await this.page
+      .locator('[data-testid="stock-price"]')
+      .textContent();
+  }
+
+  async clickBuyButton() {
+    await this.page.click(
+      '[data-testid="buy-button"]'
+    );
+    await this.page.waitForSelector(
+      '.order-modal'
+    );
+  }
+
+  async placeOrder(quantity) {
+    await this.page.fill(
+      '[data-testid="quantity"]',
+      String(quantity)
+    );
+    await this.page.click(
+      '[data-testid="confirm-order"]'
+    );
+  }
+}</code></pre>
+
+              <h4 class="font-bold mt-6 mb-3">Dockerfile</h4>
+              <pre><code class="language-dockerfile">FROM mcr.microsoft.com/playwright:v1.40.0
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+
+# 비디오 증적 저장 디렉토리
+RUN mkdir -p /app/test-results/videos
+
+CMD ["npx", "playwright", "test", \
+     "--reporter=html,json"]</code></pre>
+
+              <h4 class="font-bold mt-6 mb-3">FastAPI 테스트 서버</h4>
+              <pre><code class="language-python">from fastapi import FastAPI
+from datetime import datetime
+
+app = FastAPI()
+
+@app.get("/api/test/stock/{code}")
+async def get_test_stock(code: str):
+    """테스트용 주식 데이터 반환"""
+    return {
+        "code": code,
+        "price": 50000,
+        "change": 2.5,
+        "timestamp": datetime.now().isoformat()
+    }
+
+@app.post("/api/test/order")
+async def create_test_order(order: dict):
+    """테스트 주문 생성 (실제 체결 없음)"""
+    return {
+        "orderId": f"TEST-{datetime.now().timestamp()}",
+        "status": "FILLED",
+        **order
+    }</code></pre>
+
+              <h4 class="font-bold mt-6 mb-3">테스트 시나리오 (12개 핵심 플로우)</h4>
+              <div class="grid md:grid-cols-3 gap-3">
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">1. 로그인 / 로그아웃</p></div>
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">2. 종목 검색</p></div>
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">3. 종목 상세 조회</p></div>
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">4. 매수 주문</p></div>
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">5. 매도 주문</p></div>
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">6. 주문 취소</p></div>
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">7. 잔고 조회</p></div>
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">8. 주문 내역 조회</p></div>
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">9. 차트 렌더링</p></div>
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">10. 호가창 실시간 업데이트</p></div>
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">11. 커뮤니티 댓글</p></div>
+                <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs font-medium">12. 알림 설정</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 6. WHY ME ========== -->
+  <section class="bg-dark-800 py-20 px-6">
+    <div class="max-w-4xl mx-auto fade-in">
+      <h2 class="text-3xl font-bold mb-12 text-center">Why Me</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-dark-700 rounded-2xl p-6 border border-gray-800">
+          <div class="text-accent text-2xl font-bold mb-3">01</div>
+          <p class="text-gray-300 text-sm leading-relaxed">단 한 명의 QA로도 팀의 <span class="text-white font-semibold">품질 문화를 만들어 온</span> 경험</p>
+        </div>
+        <div class="bg-dark-700 rounded-2xl p-6 border border-gray-800">
+          <div class="text-accent text-2xl font-bold mb-3">02</div>
+          <p class="text-gray-300 text-sm leading-relaxed">테스트 자동화와 협업 효율화를 <span class="text-white font-semibold">동시에 실현</span>해낸 QA</p>
+        </div>
+        <div class="bg-dark-700 rounded-2xl p-6 border border-gray-800">
+          <div class="text-accent text-2xl font-bold mb-3">03</div>
+          <p class="text-gray-300 text-sm leading-relaxed">품질 관점에서 기획자와 개발자 사이의 <span class="text-white font-semibold">허리를 맡아본</span> QA</p>
+        </div>
+        <div class="bg-dark-700 rounded-2xl p-6 border border-gray-800">
+          <div class="text-accent text-2xl font-bold mb-3">04</div>
+          <p class="text-gray-300 text-sm leading-relaxed">런칭 QA 경험이 있는 <span class="text-white font-semibold">실전형 QA</span> (WTS 4000+버그, 1000+TC)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 7. CONTACT FOOTER ========== -->
+  <footer class="bg-dark-900 py-16 px-6 border-t border-gray-800">
+    <div class="max-w-4xl mx-auto text-center fade-in">
+      <h2 class="text-2xl font-bold mb-8">Contact</h2>
+      <div class="flex flex-col md:flex-row justify-center gap-8 text-gray-400">
+        <a href="tel:010-6529-6563" class="hover:text-accent transition-colors flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          010-6529-6563
+        </a>
+        <a href="mailto:qwe06277@naver.com" class="hover:text-accent transition-colors flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          qwe06277@naver.com
+        </a>
+        <a href="https://github.com/rubyluba" target="_blank" class="hover:text-accent transition-colors flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          github.com/rubyluba
+        </a>
+      </div>
+      <p class="text-gray-600 text-xs mt-10">&copy; 2025 윤가영. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    // Highlight.js 초기화
+    hljs.highlightAll();
+
+    // Accordion 토글
+    function toggleAccordion(btn) {
+      const content = btn.nextElementSibling;
+      const arrow = btn.querySelector('.accordion-arrow');
+      content.classList.toggle('open');
+      arrow.classList.toggle('open');
+    }
+
+    // 스크롤 페이드인 (Intersection Observer)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
