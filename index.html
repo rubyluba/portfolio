@@ -867,6 +867,19 @@ jobs:
           name: test-results
           path: test-results/</code></pre>
 
+              <!-- 실제 동작 화면 -->
+              <h4 class="font-bold mt-6 mb-3">실제 동작 화면</h4>
+              <div class="grid md:grid-cols-2 gap-4 mb-6">
+                <div>
+                  <img src="assets/e2e-result.png" alt="E2E 테스트 결과 Slack 알림" class="rounded-lg border border-gray-200 shadow-sm w-full">
+                  <p class="text-xs text-gray-400 mt-2 text-center">E2E 테스트 결과 Slack 자동 알림</p>
+                </div>
+                <div>
+                  <img src="assets/github-pr.png" alt="GitHub PR 커밋 히스토리" class="rounded-lg border border-gray-200 shadow-sm w-full">
+                  <p class="text-xs text-gray-400 mt-2 text-center">GitHub PR / 커밋 히스토리</p>
+                </div>
+              </div>
+
               <!-- 기술적 도전 -->
               <h4 class="font-bold mt-6 mb-3">기술적 도전</h4>
               <div class="space-y-3">
@@ -965,6 +978,12 @@ jobs:
               </div>
 
               <!-- Lambda A 코드 -->
+              <h4 class="font-bold mb-3">실제 동작 화면</h4>
+              <div class="mb-6">
+                <img src="assets/jira-slack-ticket.png" alt="Jira-Slack 티켓 자동 생성" class="rounded-lg border border-gray-200 shadow-sm max-w-sm mx-auto">
+                <p class="text-xs text-gray-400 mt-2 text-center">Slack 메시지 → Jira 티켓 자동 생성 화면</p>
+              </div>
+
               <p class="text-xs text-gray-400 mb-4 italic">* 보안 정책상 실제 코드 대신 동일 패턴의 구현 예시입니다</p>
               <h4 class="font-bold mb-3">Lambda A: 이벤트 라우터</h4>
               <pre><code class="language-javascript">exports.handler = async (event) => {
@@ -1082,6 +1101,12 @@ jobs:
                 </div>
               </div>
 
+              <h4 class="font-bold mb-3">실제 동작 화면</h4>
+              <div class="mb-6">
+                <img src="assets/deploy-alert.png" alt="Jira 배포 현황 Slack 알림" class="rounded-lg border border-gray-200 shadow-sm max-w-md mx-auto">
+                <p class="text-xs text-gray-400 mt-2 text-center">매일 자동 발송되는 배포 현황 Slack 메시지</p>
+              </div>
+
               <p class="text-xs text-gray-400 mb-4 italic">* 보안 정책상 실제 코드 대신 동일 패턴의 구현 예시입니다</p>
               <h4 class="font-bold mb-3">핵심 코드</h4>
               <pre><code class="language-python">def get_deploy_issues(fix_version: str) -> list:
@@ -1152,6 +1177,12 @@ jobs:
                     <li>릴리즈 지연 0건</li>
                   </ul>
                 </div>
+              </div>
+
+              <h4 class="font-bold mb-3">실제 QA 활동 화면</h4>
+              <div class="mb-6">
+                <img src="assets/slack-bug-report.png" alt="Slack 버그 리포트" class="rounded-lg border border-gray-200 shadow-sm max-w-md mx-auto">
+                <p class="text-xs text-gray-400 mt-2 text-center">커뮤니티 스쿼드 Slack 채널 버그 리포트 현황</p>
               </div>
 
               <h4 class="font-bold mb-3">주요 활동</h4>
