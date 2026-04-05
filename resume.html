@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* 간격 시스템: 4px / 8px / 16px / 24px */
     body {
       font-family: 'Pretendard Variable', 'Pretendard', -apple-system, sans-serif;
       color: #1a1a1a;
@@ -14,18 +15,18 @@
       line-height: 1.6;
       max-width: 210mm;
       margin: 0 auto;
-      padding: 12mm 14mm;
+      padding: 14mm 16mm;
       background: #fff;
     }
 
     /* 헤더 */
-    .header { border-bottom: 2px solid #111; padding-bottom: 12px; margin-bottom: 14px; }
+    .header { border-bottom: 2px solid #111; padding-bottom: 8px; margin-bottom: 16px; }
     .header h1 { font-size: 24pt; font-weight: 800; letter-spacing: -0.5px; }
-    .header .contact-row { display: flex; gap: 16px; font-size: 8.5pt; color: #555; margin-top: 6px; }
+    .header .contact-row { display: flex; gap: 16px; font-size: 8.5pt; color: #555; margin-top: 4px; }
     .header .contact-row a { color: #3b82f6; text-decoration: none; }
 
     /* 자기소개 */
-    .intro { background: #f8f9fa; border-left: 3px solid #3b82f6; padding: 10px 14px; margin-bottom: 16px; font-size: 9.5pt; line-height: 1.7; color: #333; }
+    .intro { background: #f8f9fa; border-left: 3px solid #3b82f6; padding: 8px 16px; margin-bottom: 16px; font-size: 9.5pt; line-height: 1.7; color: #333; }
 
     /* 섹션 */
     .section { margin-bottom: 16px; }
@@ -34,31 +35,31 @@
       font-weight: 800;
       border-bottom: 1px solid #ddd;
       padding-bottom: 4px;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     /* 스킬 */
-    .skills { display: flex; flex-wrap: wrap; gap: 5px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 4px; }
     .skill-core { padding: 2px 8px; background: #3b82f6; color: #fff; border-radius: 3px; font-size: 8.5pt; font-weight: 600; }
     .skill-sub { padding: 2px 8px; background: #f3f4f6; color: #444; border-radius: 3px; font-size: 8.5pt; }
 
     /* 회사 */
-    .company { margin-bottom: 16px; }
-    .company-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+    .company { margin-bottom: 24px; }
+    .company-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
     .company-header h3 { font-size: 11pt; font-weight: 800; }
-    .company-meta { font-size: 8.5pt; color: #888; margin-bottom: 10px; }
+    .company-meta { font-size: 8.5pt; color: #888; margin-bottom: 8px; }
 
     /* 서브 프로젝트 */
-    .sub-project { margin-bottom: 10px; padding-left: 0; }
-    .sub-project-title { font-size: 10pt; font-weight: 700; margin-bottom: 1px; }
+    .sub-project { margin-bottom: 8px; }
+    .sub-project-title { font-size: 10pt; font-weight: 700; margin-bottom: 2px; }
     .sub-project-meta { font-size: 8pt; color: #888; margin-bottom: 4px; }
-    .sub-project ul { padding-left: 14px; }
+    .sub-project ul { padding-left: 16px; }
     .sub-project li { margin-bottom: 2px; font-size: 9pt; }
     .sub-project li::marker { color: #3b82f6; }
     .hl { font-weight: 600; }
 
     /* 하단 2열 */
-    .bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 
     /* 링크 */
     .links a { color: #3b82f6; text-decoration: none; font-size: 9pt; }
@@ -66,7 +67,7 @@
     /* 인쇄 */
     @media print {
       body { padding: 0; }
-      @page { size: A4; margin: 14mm 12mm; }
+      @page { size: A4; margin: 14mm 16mm; }
       .intro { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .skill-core { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
@@ -263,17 +264,17 @@
       </div>
     </div>
 
-    <!-- 티맥스오에스 -->
+    <!-- 티맥스와플 → 티맥스오에스 -->
     <div class="company">
       <div class="company-header">
-        <h3>(주)티맥스오에스</h3>
-        <span style="font-size:8.5pt; color:#888;">OS/솔루션</span>
+        <h3>티맥스와플 &rarr; 티맥스오에스</h3>
+        <span style="font-size:8.5pt; color:#888;">화상회의 / OS 솔루션</span>
       </div>
-      <div class="company-meta">2022.09 - 2023.11 (1년 3개월) &nbsp;|&nbsp; 정규직 &nbsp;|&nbsp; QA Manager</div>
+      <div class="company-meta">2022.05 - 2023.11 (1년 7개월) &nbsp;|&nbsp; 정규직 &nbsp;|&nbsp; QA Manager</div>
 
       <div class="sub-project">
         <div class="sub-project-title">하이퍼미팅 QA 프로세스 리딩 및 안정성 확보</div>
-        <div class="sub-project-meta">2022.09 - 2023.11</div>
+        <div class="sub-project-meta">2022.05 - 2023.11</div>
         <ul>
           <li>운영 환경의 대규모 업데이트 시 QA 프로세스를 주도적으로 설계하여 SSO 연계 리스크를 사전 식별</li>
           <li><span class="hl">100+ 이슈</span>를 해결하여 운영 안정성 확보</li>
@@ -294,24 +295,6 @@
         <div class="sub-project-meta">2023.01 - 2023.11</div>
         <ul>
           <li>Grafana 기반 부하 테스트를 통해 <span class="hl">1000명 동시 접속</span> 환경 서버 리소스 측정 및 최적화, 비용 절감 기여</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 티맥스와플 -->
-    <div class="company">
-      <div class="company-header">
-        <h3>주식회사 티맥스와플</h3>
-        <span style="font-size:8.5pt; color:#888;">화상회의</span>
-      </div>
-      <div class="company-meta">2022.05 - 2022.09 (5개월) &nbsp;|&nbsp; 정규직 &nbsp;|&nbsp; QA Manager</div>
-
-      <div class="sub-project">
-        <div class="sub-project-title">화상회의 Software QA</div>
-        <div class="sub-project-meta">2022.05 - 2022.09</div>
-        <ul>
-          <li>개발 초기 단계 QA 주도, Docker/Kubernetes 기반 QA 서버 환경 일관성 유지</li>
-          <li>BugZilla 기반 자체 이슈 관리 툴 활용</li>
         </ul>
       </div>
     </div>
